@@ -1,17 +1,23 @@
 import {Component} from "angular2/core";
-import {MessageListComponent} from "./messages/message-list-component";
-import {MessageInputComponent} from "./messages/message-input-component";
+import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
+import {MessagesComponent} from "./messages/messages.component";
+import {AuthenticationComponent} from "./auth/authentication.component";
+import {MessageListComponent} from "./messages/message-list.component";
+import {MessageInputComponent} from "./messages/message-input.component";
+@Component({
     selector: 'my-app',
-    template: `  
-    	<div class="row spacing">
-    		<my-message-input></my-message-input>
-       	</div>
-        <div class="row spacing">
-        	<my-message-list></my-message-list>
-        </div>
-    `
+    template: ` 
+    	<div class="container">
+    		<my-header></my-header>
+    		<router-outlet></router-outlet>
+    	</div> 	
+    `,
     directives: [MessageListComponent, MessageInputComponent]
 })
+@RouteConfig([
+	{path: '/', name: 'Messages', component: MessagesComponent, useAsDefault: true},
+	{path: '/auth/...', name: 'Auth', component: AuthenticationComponent}
+])
 export class AppComponent {
 	
 }
