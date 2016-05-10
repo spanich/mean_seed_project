@@ -1,7 +1,7 @@
 export class Message {
 	content: string;
 	username: string;
-	messageId string;
+	messageId: string;
 	userId: string;
 
 	constructor(content: string, messageId?: string, username?: string, userId?: string) {
