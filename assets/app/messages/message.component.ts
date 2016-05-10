@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter} from "angular2/core";
 import {Message} from "./message";
 @Component({
-	selector: 'my-message'
+	selector: 'my-message',
 	template: `
 		<article class="panel panel-default">
 	        <div class="panel-body">
@@ -17,8 +17,8 @@ import {Message} from "./message";
 	        </div>
 	        </footer>
 	    </article>
-	`
-	styles: ['
+	`,
+	styles: [`
     .author {
     	display: inline-block;
     	font-style: italic;
@@ -30,7 +30,7 @@ import {Message} from "./message";
     	text-align: right;
     	font-size: 12px;
     	width: 19%;
-    }']
+    }`]
 })
 
 export class MessageComponent {

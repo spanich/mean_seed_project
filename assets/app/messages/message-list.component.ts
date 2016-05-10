@@ -8,10 +8,10 @@ import {Message} from "./message";
 	`,
     directives: [MessageComponent]
 })
-export Class MessageListComponent {
+export class MessageListComponent {
 	messages: Message[] = [
-		new Message('A new message', null, 'Max');
-		new Message('Another message', null, 'Anna');
+		new Message('A new message', null, 'Max'),
+		new Message('Another message', null, 'Anna'),
 	];
 	
 }
