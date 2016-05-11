@@ -7,223 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-System.register("messages/messages.component", ["angular2/core", "./messages/message-list.component", "./messages/message-input.component"], function(exports_1, context_1) {
+System.register("messages/message", [], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var core_1, message_list_component_1, message_input_component_1;
-    var MessagesComponent;
-    return {
-        setters:[
-            function (core_1_1) {
-                core_1 = core_1_1;
-            },
-            function (message_list_component_1_1) {
-                message_list_component_1 = message_list_component_1_1;
-            },
-            function (message_input_component_1_1) {
-                message_input_component_1 = message_input_component_1_1;
-            }],
-        execute: function() {
-            MessagesComponent = (function () {
-                function MessagesComponent() {
-                }
-                MessagesComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-app',
-                        template: "\n\t\t<div class=\"row spacing\">\n\t\t\t<my-message-input></my-message-input>\n\t\t</div>\n\t\t<div class=\"row spacing\">\n\t\t\t<my-message-list></my-message-list>\n\t\t</div>\n\t",
-                        directives: [message_list_component_1.MessageListComponent, message_input_component_1.MessageInputComponent]
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], MessagesComponent);
-                return MessagesComponent;
-            }());
-            exports_1("MessagesComponent", MessagesComponent);
-        }
-    }
-});
-System.register("auth/signup.component", ["angular2/core", "angular2/common"], function(exports_2, context_2) {
-    "use strict";
-    var __moduleName = context_2 && context_2.id;
-    var core_2, common_1;
-    var SignupComponent;
-    return {
-        setters:[
-            function (core_2_1) {
-                core_2 = core_2_1;
-            },
-            function (common_1_1) {
-                common_1 = common_1_1;
-            }],
-        execute: function() {
-            SignupComponent = (function () {
-                function SignupComponent(_fb) {
-                    this._fb = _fb;
-                }
-                SignupComponent.prototype.onSubmit = function () {
-                    console.log(myForm.value);
-                };
-                SignupComponent.prototype.ngOnInit = function () {
-                    this.myForm = this._fb.group({
-                        firstName: ['', common_1.Validators.required],
-                        lastName: ['', common_1.Validators.required],
-                        email: ['', common_1.Validators.compose([
-                                common_1.Validators.required,
-                                this.isEmail
-                            ])],
-                        password: ['', common_1.Validators.required]
-                    });
-                };
-                SignupComponent.prototype.isEmail = function (control) {
-                    if (!control.value.match("/^(([^<>()\[\]\\.,;:\s@", +(), [ ^ (), [], ,]))
-                        ;
-                    s;
-                    +"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/";
-                    {
-                        return { invalidMail: true };
-                    }
-                };
-                SignupComponent = __decorate([
-                    core_2.Component({
-                        selector: 'my-signup',
-                        template: "\n\t\t<section class=\"col-md-8 col-md-offset-2\">\n\t\t\t<form [ngFormModel]=\"myForm\" (ngSubmit)=\"onSubmit()\">\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t<label for=\"firstName\">First Name</label>\n\t\t\t\t\t<input [ngFormControl]=\"myForm.find('firstName')\" type=\"text\" id=\"firstName\" class=\"form-control\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t<label for=\"lastName\">Last Name</label>\n\t\t\t\t\t<input [ngFormControl]=\"myForm.find('lastName')\" type=\"text\" id=\"lastName\" class=\"form-control\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t<label for=\"email\">Mail</label>\n\t\t\t\t\t<input [ngFormControl]=\"myForm.find('email')\" type=\"email\" id=\"email\" class=\"form-control\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t<label for=\"password\">Password</label>\n\t\t\t\t\t<input [ngFormControl]=\"myForm.find('password')\" type=\"password\" id=\"password\" class=\"form-control\">\n\t\t\t\t</div>\n\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!myForm.valid\">Sign Up</button>\n\t\t\t</form>\n\t\t</section>\n\t"
-                    }), 
-                    __metadata('design:paramtypes', [common_1.FormBuilder])
-                ], SignupComponent);
-                return SignupComponent;
-            }());
-            exports_2("SignupComponent", SignupComponent);
-        }
-    }
-});
-System.register("auth/signin.component", ["angular2/core", "angular2/common"], function(exports_3, context_3) {
-    "use strict";
-    var __moduleName = context_3 && context_3.id;
-    var core_3, common_2;
-    var SignInComponent;
-    return {
-        setters:[
-            function (core_3_1) {
-                core_3 = core_3_1;
-            },
-            function (common_2_1) {
-                common_2 = common_2_1;
-            }],
-        execute: function() {
-            SignInComponent = (function () {
-                function SignInComponent(_fb) {
-                    this._fb = _fb;
-                }
-                SignInComponent.prototype.onSubmit = function () {
-                    console.log(myForm.value);
-                };
-                SignInComponent.prototype.ngOnInit = function () {
-                    this.myForm = this._fb.group({
-                        email: ['', common_2.Validators.compose([
-                                common_2.Validators.required,
-                                this.isEmail
-                            ])],
-                        password: ['', common_2.Validators.required]
-                    });
-                };
-                SignInComponent.prototype.isEmail = function (control) {
-                    if (!control.value.match("/^(([^<>()\[\]\\.,;:\s@", +(), [ ^ (), [], ,]))
-                        ;
-                    s;
-                    +"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/";
-                    {
-                        return { invalidMail: true };
-                    }
-                };
-                SignInComponent = __decorate([
-                    core_3.Component({
-                        selector: 'my-signin',
-                        template: "\n\t\t<section class=\"col-md-8 col-md-offset-2\">\n\t\t\t<form [ngFormModel]=\"myForm\" (ngSubmit)=\"onSubmit()\">\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t<label for=\"email\">Mail</label>\n\t\t\t\t\t<input [ngFormControl]=\"myForm.find('email')\" type=\"email\" id=\"email\" class=\"form-control\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t<label for=\"password\">Password</label>\n\t\t\t\t\t<input [ngFormControl]=\"myForm.find('password')\" type=\"password\" id=\"password\" class=\"form-control\">\n\t\t\t\t</div>\n\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!myForm.valid\">Sign Up</button>\n\t\t\t</form>\n\t\t</section>\n\n\t"
-                    }), 
-                    __metadata('design:paramtypes', [common_2.FormBuilder])
-                ], SignInComponent);
-                return SignInComponent;
-            }());
-            exports_3("SignInComponent", SignInComponent);
-        }
-    }
-});
-System.register("auth/logout.component", ["angular2/core"], function(exports_4, context_4) {
-    "use strict";
-    var __moduleName = context_4 && context_4.id;
-    var core_4;
-    var LogoutComponent;
-    return {
-        setters:[
-            function (core_4_1) {
-                core_4 = core_4_1;
-            }],
-        execute: function() {
-            LogoutComponent = (function () {
-                function LogoutComponent() {
-                }
-                LogoutComponent.prototype.onLogout = function () {
-                };
-                LogoutComponent = __decorate([
-                    core_4.Component({
-                        selector: 'my-logout',
-                        template: "\n\t\t<section class=\"col-md-8 col-md-offset-2\">\n\t\t\t<button class=\"btn btn-danger\" (click)=\"onLogout()\">Logout</button>\n\t\t</section>\n\t"
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], LogoutComponent);
-                return LogoutComponent;
-            }());
-            exports_4("LogoutComponent", LogoutComponent);
-        }
-    }
-});
-System.register("auth/authentication.component", ["angular2/core", "auth/signup.component", "auth/signin.component", "auth/logout.component", "angular2/router"], function(exports_5, context_5) {
-    "use strict";
-    var __moduleName = context_5 && context_5.id;
-    var core_5, signup_component_1, signin_component_1, logout_component_1, router_1;
-    var AuthenticationComponent;
-    return {
-        setters:[
-            function (core_5_1) {
-                core_5 = core_5_1;
-            },
-            function (signup_component_1_1) {
-                signup_component_1 = signup_component_1_1;
-            },
-            function (signin_component_1_1) {
-                signin_component_1 = signin_component_1_1;
-            },
-            function (logout_component_1_1) {
-                logout_component_1 = logout_component_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
-            }],
-        execute: function() {
-            AuthenticationComponent = (function () {
-                function AuthenticationComponent() {
-                }
-                AuthenticationComponent = __decorate([
-                    core_5.Component({
-                        selector: 'my-auth',
-                        template: "\n\t\t<header class=\"row spacing\">\n\t\t\t<nav class=\"col-md-8 col-md-offset-2\">\n\t\t\t\t<ul class=\"nav nav-tabs\">\n\t\t\t\t\t<li><a [routerLink]=\"['Signup']\">Signup</a></li>\n\t\t\t\t\t<li><a [routerLink]=\"['Signin']\">Signin</a></li>\n\t\t\t\t\t<li><a [routerLink]=\"['Logout']\">Logout</a></li>\n\t\t\t\t</ul>\n\t\t\t</nav>\n\t\t</header>\n\t\t<div class=\"row spacing\">\n\t\t\t<router-outlet></router-outlet>\n\t\t</div>\n\n\t",
-                        directives: [ROUTER_DIRECTIVES],
-                        styles: ["\n\t\t.router-link-active {\n\t\t\tcolor: #555;\n\t\t\tcursor: default;\n\t\t\tbackground-color: #fff;\n\t\t\tborder: 1px solid #ddd;\n\t\t\tborder-bottom-color: transparent;\n\t\t}\n\n\t"]
-                    }),
-                    router_1.RouteConfig([
-                        { path: '/signup', name: 'Signup', component: signup_component_1.SignupComponent, useAsDefault: true },
-                        { path: '/signin', name: 'Signin', component: signin_component_1.SigninComponent },
-                        { path: '/logout', name: 'Logout', component: logout_component_1.LogoutComponent },]), 
-                    __metadata('design:paramtypes', [])
-                ], AuthenticationComponent);
-                return AuthenticationComponent;
-            }());
-            exports_5("AuthenticationComponent", AuthenticationComponent);
-        }
-    }
-});
-System.register("messages/message", [], function(exports_6, context_6) {
-    "use strict";
-    var __moduleName = context_6 && context_6.id;
     var Message;
     return {
         setters:[],
@@ -237,13 +23,13 @@ System.register("messages/message", [], function(exports_6, context_6) {
                 }
                 return Message;
             }());
-            exports_6("Message", Message);
+            exports_1("Message", Message);
         }
     }
 });
-System.register("messages/message.service", ["messages/message"], function(exports_7, context_7) {
+System.register("messages/message.service", ["messages/message"], function(exports_2, context_2) {
     "use strict";
-    var __moduleName = context_7 && context_7.id;
+    var __moduleName = context_2 && context_2.id;
     var message_1;
     var MessageService;
     return {
@@ -258,30 +44,31 @@ System.register("messages/message.service", ["messages/message"], function(expor
                 }
                 MessageService.prototype.addMessage = function (message) {
                     this.messages.push(message);
-                    console.log(this.messages);
                 };
                 MessageService.prototype.getMessages = function () {
                     return this.messages;
                 };
+                MessageService.prototype.editMessage = function (message) {
+                    this.messages[this.messages.indexOf(message)] = new message_1.Message('Edited', null, 'Dummy');
+                };
+                MessageService.prototype.deleteMessage = function (message) {
+                    this.messages.splice(this.messages.indexOf(message), 1);
+                };
                 return MessageService;
             }());
-            exports_7("MessageService", MessageService);
-            deleteMessage(message, message_1.Message);
-            {
-                this.messages.splice(this.messages.indexOf(message), 1);
-            }
+            exports_2("MessageService", MessageService);
         }
     }
 });
-System.register("messages/message.component", ["angular2/core", "messages/message", "messages/message.service"], function(exports_8, context_8) {
+System.register("messages/message-input.component", ["angular2/core", "messages/message", "messages/message.service"], function(exports_3, context_3) {
     "use strict";
-    var __moduleName = context_8 && context_8.id;
-    var core_6, message_2, message_service_1;
-    var MessageComponent;
+    var __moduleName = context_3 && context_3.id;
+    var core_1, message_2, message_service_1;
+    var MessageInputComponent;
     return {
         setters:[
-            function (core_6_1) {
-                core_6 = core_6_1;
+            function (core_1_1) {
+                core_1 = core_1_1;
             },
             function (message_2_1) {
                 message_2 = message_2_1;
@@ -290,48 +77,38 @@ System.register("messages/message.component", ["angular2/core", "messages/messag
                 message_service_1 = message_service_1_1;
             }],
         execute: function() {
-            MessageComponent = (function () {
-                function MessageComponent(_messageService) {
+            MessageInputComponent = (function () {
+                function MessageInputComponent(_messageService) {
                     this._messageService = _messageService;
-                    this.editClicked = new core_6.EventEmitter();
+                    this.message = null;
                 }
-                MessageComponent.prototype.onEdit = function () {
-                    this._messageService.editMessage(this.message);
+                MessageInputComponent.prototype.onSubmit = function (form) {
+                    var message = new message_2.Message(form.content, null, 'Dummy');
+                    this._messageService.addMessage(message);
                 };
-                MessageComponent.prototype.onDelete = function () {
-                    this._messageService.deleteMessage(this.message);
-                };
-                MessageComponent.prototype.onClick = function () {
-                    this.editClicked.emit('Changed');
-                };
-                __decorate([
-                    core_6.Input(), 
-                    __metadata('design:type', message_2.Message)
-                ], MessageComponent.prototype, "message", void 0);
-                __decorate([
-                    core_6.Output(), 
-                    __metadata('design:type', Object)
-                ], MessageComponent.prototype, "editClicked", void 0);
-                MessageComponent = __decorate([
-                    core_6.Component({
-                        selector: 'my-message',
-                        template: "\n\t\t<article class=\"panel panel-default\">\n\t        <div class=\"panel-body\">\n\t        \t{{ message.content }}\n\t        </div>\n\t        <footer class=\"panel-footer\">\n\t        <div class=\"author\">\n\t        \t{{ message.username }}\n\t        </div>\n\t        <div class=\"config\">\n\t        \t<a href=\"#\" (click)=\"onEdit()\">Edit</a>\n\t       \t\t<a href=\"#\" (click)=\"onDelete()\">Delete</a>\n\t        </div>\n\t        </footer>\n\t    </article>\n\t",
-                        styles: ["\n    .author {\n    \tdisplay: inline-block;\n    \tfont-style: italic;\n    \tfont-size: 12px;\n    \twidth: 80%;\n    }\n    .config {\n    \tdisplay: inline-block;\n    \ttext-align: right;\n    \tfont-size: 12px;\n    \twidth: 19%;\n    }"]
+                MessageInputComponent = __decorate([
+                    core_1.Component({
+                        selector: 'my-message-input',
+                        template: "\n        <section class=\"col-md-8 col-md-offset-2\">\n            <form (ngSubmit)=\"onSubmit(f.value)\" #f=\"ngForm\">\n                <div class=\"form-group\">\n                    <label for=\"content\">Content</label>\n                    <input ngControl=\"content\" type=\"text\" class=\"form-control\" id=\"content\" #input>\n                </div>\n                <button type=\"submit\" class=\"btn btn-primary\">Send Message</button>\n            </form>\n        </section>\n    "
                     }), 
                     __metadata('design:paramtypes', [message_service_1.MessageService])
-                ], MessageComponent);
-                return MessageComponent;
+                ], MessageInputComponent);
+                return MessageInputComponent;
             }());
-            exports_8("MessageComponent", MessageComponent);
+            exports_3("MessageInputComponent", MessageInputComponent);
         }
     }
 });
-System.register("messages/message-list.component", ["messages/message", "messages/message.service"], function(exports_9, context_9) {
+System.register("messages/message.component", ["angular2/core", "messages/message", "messages/message.service"], function(exports_4, context_4) {
     "use strict";
-    var __moduleName = context_9 && context_9.id;
-    var message_3, message_service_2;
+    var __moduleName = context_4 && context_4.id;
+    var core_2, message_3, message_service_2;
+    var MessageComponent;
     return {
         setters:[
+            function (core_2_1) {
+                core_2 = core_2_1;
+            },
             function (message_3_1) {
                 message_3 = message_3_1;
             },
@@ -339,87 +116,349 @@ System.register("messages/message-list.component", ["messages/message", "message
                 message_service_2 = message_service_2_1;
             }],
         execute: function() {
-            Class;
-            MessageListComponent;
-            implements;
-            OnInit;
-            {
-                constructor(private, _messageService, message_service_2.MessageService);
-                { }
-                messages: message_3.Message[];
-                ngOnInit();
-                {
-                    this.messages = this._messageService.getMessages();
+            MessageComponent = (function () {
+                function MessageComponent(_messageService) {
+                    this._messageService = _messageService;
+                    this.editClicked = new core_2.EventEmitter();
                 }
-            }
+                MessageComponent.prototype.onEdit = function () {
+                    this._messageService.editMessage(this.message);
+                };
+                MessageComponent.prototype.onDelete = function () {
+                    this._messageService.deleteMessage(this.message);
+                };
+                __decorate([
+                    core_2.Input(), 
+                    __metadata('design:type', message_3.Message)
+                ], MessageComponent.prototype, "message", void 0);
+                __decorate([
+                    core_2.Output(), 
+                    __metadata('design:type', Object)
+                ], MessageComponent.prototype, "editClicked", void 0);
+                MessageComponent = __decorate([
+                    core_2.Component({
+                        selector: 'my-message',
+                        template: "\n        <article class=\"panel panel-default\">\n            <div class=\"panel-body\">\n                {{ message.content }}\n            </div>\n            <footer class=\"panel-footer\">\n                <div class=\"author\">\n                    {{ message.username }}\n                </div>\n                <div class=\"config\">\n                    <a (click)=\"onEdit()\">Edit</a>\n                    <a (click)=\"onDelete()\">Delete</a>\n                </div>\n            </footer>\n        </article>\n    ",
+                        styles: ["\n        .author {\n            display: inline-block;\n            font-style: italic;\n            font-size: 12px;\n            width: 80%;\n        }\n        .config {\n            display: inline-block;\n            text-align: right;\n            font-size: 12px;\n            width: 19%;\n        }\n    "]
+                    }), 
+                    __metadata('design:paramtypes', [message_service_2.MessageService])
+                ], MessageComponent);
+                return MessageComponent;
+            }());
+            exports_4("MessageComponent", MessageComponent);
         }
     }
 });
-System.register("messages/message-input.component", ["angular2/core", "messages/message"], function(exports_10, context_10) {
+System.register("messages/message-list.component", ["angular2/core", "messages/message.component", "messages/message.service"], function(exports_5, context_5) {
     "use strict";
-    var __moduleName = context_10 && context_10.id;
-    var core_7, message_4;
-    var MessageInputComponent;
+    var __moduleName = context_5 && context_5.id;
+    var core_3, message_component_1, message_service_3;
+    var MessageListComponent;
+    return {
+        setters:[
+            function (core_3_1) {
+                core_3 = core_3_1;
+            },
+            function (message_component_1_1) {
+                message_component_1 = message_component_1_1;
+            },
+            function (message_service_3_1) {
+                message_service_3 = message_service_3_1;
+            }],
+        execute: function() {
+            MessageListComponent = (function () {
+                function MessageListComponent(_messageService) {
+                    this._messageService = _messageService;
+                }
+                MessageListComponent.prototype.ngOnInit = function () {
+                    this.messages = this._messageService.getMessages();
+                };
+                MessageListComponent = __decorate([
+                    core_3.Component({
+                        selector: 'my-message-list',
+                        template: "\n        <section class=\"col-md-8 col-md-offset-2\">\n            <my-message *ngFor=\"#message of messages\" [message]=\"message\" (editClicked)=\"message.content = $event\"></my-message>     \n        </section>\n    ",
+                        directives: [message_component_1.MessageComponent]
+                    }), 
+                    __metadata('design:paramtypes', [message_service_3.MessageService])
+                ], MessageListComponent);
+                return MessageListComponent;
+            }());
+            exports_5("MessageListComponent", MessageListComponent);
+        }
+    }
+});
+System.register("messages/messages.component", ["angular2/core", "messages/message-input.component", "messages/message-list.component"], function(exports_6, context_6) {
+    "use strict";
+    var __moduleName = context_6 && context_6.id;
+    var core_4, message_input_component_1, message_list_component_1;
+    var MessagesComponent;
+    return {
+        setters:[
+            function (core_4_1) {
+                core_4 = core_4_1;
+            },
+            function (message_input_component_1_1) {
+                message_input_component_1 = message_input_component_1_1;
+            },
+            function (message_list_component_1_1) {
+                message_list_component_1 = message_list_component_1_1;
+            }],
+        execute: function() {
+            MessagesComponent = (function () {
+                function MessagesComponent() {
+                }
+                MessagesComponent = __decorate([
+                    core_4.Component({
+                        selector: 'my-messages',
+                        template: "\n        <div class=\"row spacing\">\n            <my-message-input></my-message-input>\n        </div>\n        <div class=\"row spacing\">\n            <my-message-list></my-message-list>\n        </div> \n    ",
+                        directives: [message_list_component_1.MessageListComponent, message_input_component_1.MessageInputComponent]
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], MessagesComponent);
+                return MessagesComponent;
+            }());
+            exports_6("MessagesComponent", MessagesComponent);
+        }
+    }
+});
+System.register("auth/signup.component", ["angular2/core", "angular2/common"], function(exports_7, context_7) {
+    "use strict";
+    var __moduleName = context_7 && context_7.id;
+    var core_5, common_1;
+    var SignupComponent;
+    return {
+        setters:[
+            function (core_5_1) {
+                core_5 = core_5_1;
+            },
+            function (common_1_1) {
+                common_1 = common_1_1;
+            }],
+        execute: function() {
+            SignupComponent = (function () {
+                function SignupComponent(_fb) {
+                    this._fb = _fb;
+                }
+                SignupComponent.prototype.onSubmit = function () {
+                    console.log(this.myForm.value);
+                };
+                SignupComponent.prototype.ngOnInit = function () {
+                    this.myForm = this._fb.group({
+                        firstName: ['', common_1.Validators.required],
+                        lastName: ['', common_1.Validators.required],
+                        email: ['', common_1.Validators.compose([
+                                common_1.Validators.required,
+                                this.isEmail
+                            ])],
+                        password: ['', common_1.Validators.required]
+                    });
+                };
+                SignupComponent.prototype.isEmail = function (control) {
+                    if (!control.value.match("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")) {
+                        return { invalidMail: true };
+                    }
+                };
+                SignupComponent = __decorate([
+                    core_5.Component({
+                        selector: 'my-signup',
+                        template: "\n        <section class=\"col-md-8 col-md-offset-2\">\n            <form [ngFormModel]=\"myForm\" (ngSubmit)=\"onSubmit()\">\n                <div class=\"form-group\">\n                    <label for=\"firstName\">First Name</label>\n                    <input [ngFormControl]=\"myForm.find('firstName')\" type=\"text\" id=\"firstName\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"lastName\">Last Name</label>\n                    <input [ngFormControl]=\"myForm.find('lastName')\" type=\"text\" id=\"lastName\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"email\">Mail</label>\n                    <input [ngFormControl]=\"myForm.find('email')\" type=\"email\" id=\"email\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"password\">Password</label>\n                    <input [ngFormControl]=\"myForm.find('password')\" type=\"password\" id=\"password\" class=\"form-control\">\n                </div>\n                <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!myForm.valid\">Sign Up</button>\n            </form>\n        </section>\n    "
+                    }), 
+                    __metadata('design:paramtypes', [common_1.FormBuilder])
+                ], SignupComponent);
+                return SignupComponent;
+            }());
+            exports_7("SignupComponent", SignupComponent);
+        }
+    }
+});
+System.register("auth/signin.component", ["angular2/core", "angular2/common"], function(exports_8, context_8) {
+    "use strict";
+    var __moduleName = context_8 && context_8.id;
+    var core_6, common_2;
+    var SigninComponent;
+    return {
+        setters:[
+            function (core_6_1) {
+                core_6 = core_6_1;
+            },
+            function (common_2_1) {
+                common_2 = common_2_1;
+            }],
+        execute: function() {
+            SigninComponent = (function () {
+                function SigninComponent(_fb) {
+                    this._fb = _fb;
+                }
+                SigninComponent.prototype.onSubmit = function () {
+                    console.log(this.myForm.value);
+                };
+                SigninComponent.prototype.ngOnInit = function () {
+                    this.myForm = this._fb.group({
+                        email: ['', common_2.Validators.compose([
+                                common_2.Validators.required,
+                                this.isEmail
+                            ])],
+                        password: ['', common_2.Validators.required]
+                    });
+                };
+                SigninComponent.prototype.isEmail = function (control) {
+                    if (!control.value.match("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")) {
+                        return { invalidMail: true };
+                    }
+                };
+                SigninComponent = __decorate([
+                    core_6.Component({
+                        selector: 'my-signin',
+                        template: "\n        <section class=\"col-md-8 col-md-offset-2\">\n            <form [ngFormModel]=\"myForm\" (ngSubmit)=\"onSubmit()\">\n                <div class=\"form-group\">\n                    <label for=\"email\">Mail</label>\n                    <input [ngFormControl]=\"myForm.find('email')\" type=\"email\" id=\"email\" class=\"form-control\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"password\">Password</label>\n                    <input [ngFormControl]=\"myForm.find('password')\" type=\"password\" id=\"password\" class=\"form-control\">\n                </div>\n                <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!myForm.valid\">Sign Up</button>\n            </form>\n        </section>\n    "
+                    }), 
+                    __metadata('design:paramtypes', [common_2.FormBuilder])
+                ], SigninComponent);
+                return SigninComponent;
+            }());
+            exports_8("SigninComponent", SigninComponent);
+        }
+    }
+});
+System.register("auth/logout.component", ["angular2/core"], function(exports_9, context_9) {
+    "use strict";
+    var __moduleName = context_9 && context_9.id;
+    var core_7;
+    var LogoutComponent;
     return {
         setters:[
             function (core_7_1) {
                 core_7 = core_7_1;
-            },
-            function (message_4_1) {
-                message_4 = message_4_1;
             }],
         execute: function() {
-            MessageInputComponent = (function () {
-                function MessageInputComponent(_messageService) {
-                    this._messageService = _messageService;
+            LogoutComponent = (function () {
+                function LogoutComponent() {
                 }
-                MessageInputComponent.prototype.onSubmit = function (form) {
-                    var message = new message_4.Message(form.content, null, 'Dummy UserName');
-                    this._messageService.addMessage(message);
+                LogoutComponent.prototype.onLogout = function () {
                 };
-                MessageInputComponent = __decorate([
+                LogoutComponent = __decorate([
                     core_7.Component({
-                        selector: 'my-message-input',
-                        template: "\n\t\t<section class=\"col-md-8 col-md-offset-2\">\n\t\t\t<form (ngSubmit)=\"onSubmit(f.value)\" #f=\"ngForm\">\n\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t<label for=\"content\">Content</label>\n\t\t\t\t\t<input ngControl=\"content\" type=\"text\" class=\"form-control\" id=\"content\" #input>\n\t\t\t\t</div>\n\t\t\t\t<button type=\"submit\" class=\"btn btn-primary\" (click)=\"onCreate(input.value)\">Send Message</button>\n\t\t\t</form>\n\t\t</section>\n\t"
+                        selector: 'my-logout',
+                        template: "\n        <section class=\"col-md-8 col-md-offset-2\">\n            <button class=\"btn btn-danger\" (click)=\"onLogout()\">Logout</button>\n        </section>\n    "
                     }), 
-                    __metadata('design:paramtypes', [Object])
-                ], MessageInputComponent);
-                return MessageInputComponent;
+                    __metadata('design:paramtypes', [])
+                ], LogoutComponent);
+                return LogoutComponent;
             }());
-            exports_10("MessageInputComponent", MessageInputComponent);
+            exports_9("LogoutComponent", LogoutComponent);
         }
     }
 });
-System.register("app.component", ["angular2/core", "angular2/router", "messages/messages.component", "auth/authentication.component"], function(exports_11, context_11) {
+System.register("auth/authentication.component", ["angular2/core", "auth/signup.component", "angular2/router", "auth/signin.component", "auth/logout.component"], function(exports_10, context_10) {
     "use strict";
-    var __moduleName = context_11 && context_11.id;
-    var core_8, router_2, messages_component_1, authentication_component_1;
-    var AppComponent;
+    var __moduleName = context_10 && context_10.id;
+    var core_8, signup_component_1, router_1, signin_component_1, logout_component_1;
+    var AuthenticationComponent;
     return {
         setters:[
             function (core_8_1) {
                 core_8 = core_8_1;
             },
+            function (signup_component_1_1) {
+                signup_component_1 = signup_component_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (signin_component_1_1) {
+                signin_component_1 = signin_component_1_1;
+            },
+            function (logout_component_1_1) {
+                logout_component_1 = logout_component_1_1;
+            }],
+        execute: function() {
+            AuthenticationComponent = (function () {
+                function AuthenticationComponent() {
+                }
+                AuthenticationComponent = __decorate([
+                    core_8.Component({
+                        selector: 'my-auth',
+                        template: "\n        <header class=\"row spacing\">\n            <nav class=\"col-md-8 col-md-offset-2\">\n                <ul class=\"nav nav-tabs\">\n                    <li><a [routerLink]=\"['Signup']\">Signup</a></li>\n                    <li><a [routerLink]=\"['Signin']\">Signin</a></li>\n                    <li><a [routerLink]=\"['Logout']\">Logout</a></li>\n                </ul>\n            </nav>\n        </header>\n        <div class=\"row spacing\">\n            <router-outlet></router-outlet>\n        </div>\n    ",
+                        directives: [router_1.ROUTER_DIRECTIVES],
+                        styles: ["\n        .router-link-active {\n            color: #555;\n            cursor: default;\n            background-color: #fff;\n            border: 1px solid #ddd;\n            border-bottom-color: transparent;\n        }\n    "]
+                    }),
+                    router_1.RouteConfig([
+                        { path: '/signup', name: 'Signup', component: signup_component_1.SignupComponent, useAsDefault: true },
+                        { path: '/signin', name: 'Signin', component: signin_component_1.SigninComponent },
+                        { path: '/logout', name: 'Logout', component: logout_component_1.LogoutComponent },
+                    ]), 
+                    __metadata('design:paramtypes', [])
+                ], AuthenticationComponent);
+                return AuthenticationComponent;
+            }());
+            exports_10("AuthenticationComponent", AuthenticationComponent);
+        }
+    }
+});
+System.register("header.component", ["angular2/core", "angular2/router"], function(exports_11, context_11) {
+    "use strict";
+    var __moduleName = context_11 && context_11.id;
+    var core_9, router_2;
+    var HeaderComponent;
+    return {
+        setters:[
+            function (core_9_1) {
+                core_9 = core_9_1;
+            },
             function (router_2_1) {
                 router_2 = router_2_1;
+            }],
+        execute: function() {
+            HeaderComponent = (function () {
+                function HeaderComponent() {
+                }
+                HeaderComponent = __decorate([
+                    core_9.Component({
+                        selector: 'my-header',
+                        template: "\n        <header class=\"row\">\n            <nav class=\"col-md-8 col-md-offset-2\">\n                <ul class=\"nav nav-pills\">\n                    <li><a [routerLink]=\"['Messages']\">Messages</a></li>\n                    <li><a [routerLink]=\"['Auth']\">Authentication</a></li>\n                </ul>\n            </nav>\n        </header>\n    ",
+                        directives: [router_2.ROUTER_DIRECTIVES],
+                        styles: ["\n        header {\n            margin-bottom: 20px;\n        }\n    \n        ul {\n          text-align: center;  \n        }\n        \n        li {\n            float: none;\n            display: inline-block;\n        }\n        \n        .router-link-active {\n            background-color: #337ab7;\n            color: white;\n        }\n    "]
+                    }), 
+                    __metadata('design:paramtypes', [])
+                ], HeaderComponent);
+                return HeaderComponent;
+            }());
+            exports_11("HeaderComponent", HeaderComponent);
+        }
+    }
+});
+System.register("app.component", ['angular2/core', "angular2/router", "messages/messages.component", "auth/authentication.component", "header.component"], function(exports_12, context_12) {
+    "use strict";
+    var __moduleName = context_12 && context_12.id;
+    var core_10, router_3, messages_component_1, authentication_component_1, header_component_1;
+    var AppComponent;
+    return {
+        setters:[
+            function (core_10_1) {
+                core_10 = core_10_1;
+            },
+            function (router_3_1) {
+                router_3 = router_3_1;
             },
             function (messages_component_1_1) {
                 messages_component_1 = messages_component_1_1;
             },
             function (authentication_component_1_1) {
                 authentication_component_1 = authentication_component_1_1;
+            },
+            function (header_component_1_1) {
+                header_component_1 = header_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
                 }
                 AppComponent = __decorate([
-                    core_8.Component({
+                    core_10.Component({
                         selector: 'my-app',
-                        template: " \n    \t<div class=\"container\">\n    \t\t<my-header></my-header>\n    \t\t<router-outlet></router-outlet>\n    \t</div> \t\n    ",
-                        directives: [router_2.ROUTER_DIRECTIVES, HeaderComponent]
+                        template: " \n        <div class=\"container\">\n            <my-header></my-header>\n            <router-outlet></router-outlet>\n        </div>\n    ",
+                        directives: [router_3.ROUTER_DIRECTIVES, header_component_1.HeaderComponent]
                     }),
-                    router_2.RouteConfig([
+                    router_3.RouteConfig([
                         { path: '/', name: 'Messages', component: messages_component_1.MessagesComponent, useAsDefault: true },
                         { path: '/auth/...', name: 'Auth', component: authentication_component_1.AuthenticationComponent }
                     ]), 
@@ -427,14 +466,14 @@ System.register("app.component", ["angular2/core", "angular2/router", "messages/
                 ], AppComponent);
                 return AppComponent;
             }());
-            exports_11("AppComponent", AppComponent);
+            exports_12("AppComponent", AppComponent);
         }
     }
 });
-System.register("boot", ['angular2/platform/browser', "app.component", "messages/message.service", 'angular2/router', 'angular2/core'], function(exports_12, context_12) {
+System.register("boot", ['angular2/platform/browser', "app.component", "messages/message.service", "angular2/router", "angular2/core"], function(exports_13, context_13) {
     "use strict";
-    var __moduleName = context_12 && context_12.id;
-    var browser_1, app_component_1, message_service_3, router_3, core_9;
+    var __moduleName = context_13 && context_13.id;
+    var browser_1, app_component_1, message_service_4, router_4, core_11;
     return {
         setters:[
             function (browser_1_1) {
@@ -443,49 +482,17 @@ System.register("boot", ['angular2/platform/browser', "app.component", "messages
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
             },
-            function (message_service_3_1) {
-                message_service_3 = message_service_3_1;
-            },
-            function (router_3_1) {
-                router_3 = router_3_1;
-            },
-            function (core_9_1) {
-                core_9 = core_9_1;
-            }],
-        execute: function() {
-            browser_1.bootstrap(app_component_1.AppComponent, [message_service_3.MessageService, ROUTER_PROVIDERS, core_9.provide(router_3.LocationStrategy, { useClass: router_3.HashLocationStrategy })]);
-        }
-    }
-});
-System.register("header.component", ["angular2/core", "angular2/router"], function(exports_13, context_13) {
-    "use strict";
-    var __moduleName = context_13 && context_13.id;
-    var core_10, router_4;
-    var HeaderComponent;
-    return {
-        setters:[
-            function (core_10_1) {
-                core_10 = core_10_1;
+            function (message_service_4_1) {
+                message_service_4 = message_service_4_1;
             },
             function (router_4_1) {
                 router_4 = router_4_1;
+            },
+            function (core_11_1) {
+                core_11 = core_11_1;
             }],
         execute: function() {
-            HeaderComponent = (function () {
-                function HeaderComponent() {
-                }
-                HeaderComponent = __decorate([
-                    core_10.Component({
-                        selector: 'my-header',
-                        template: "\n\t\t<header class=\"row\">\n\t\t\t<nav class=\"col-md-8 col-md-offset-2\">\n\t\t\t\t<ul class=\"nav nav-pills\">\n\t\t\t\t\t<li><a [routerLink]=\"['Messages']\">Messenger</a></li>\n\t\t\t\t\t<li><a [routerLink]=\"['Auth']\">Authentication</a></li>\n\t\t\t\t</ul>\n\t\t\t</nav>\n\t\t</header>\n\t",
-                        directives: [router_4.ROUTER_DIRECTIVES],
-                        styles: ["\n\t\theader {\n\t\t\tmargin-bottome: 20px;\n\t\t}\n\t\tul {\n\t\t\ttext-align: center;\n\t\t}\n\t\tli {\n\t\t\tfloat: none;\n\t\t\tdisplay: inline-block;\n\t\t}\n\t\t.router-link-active {\n\t\t\tbackground-color: #337ab7;\n\t\t\tcolor: white;\n\n\t\t}\n\t"]
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], HeaderComponent);
-                return HeaderComponent;
-            }());
-            exports_13("HeaderComponent", HeaderComponent);
+            browser_1.bootstrap(app_component_1.AppComponent, [message_service_4.MessageService, router_4.ROUTER_PROVIDERS, core_11.provide(router_4.LocationStrategy, { useClass: router_4.HashLocationStrategy })]);
         }
     }
 });
@@ -499,6 +506,9 @@ System.register("auth/user", [], function(exports_14, context_14) {
             User = (function () {
                 function User(email, password, firstName, lastName) {
                     this.email = email;
+                    this.password = password;
+                    this.firstName = firstName;
+                    this.lastName = lastName;
                 }
                 return User;
             }());
@@ -507,4 +517,4 @@ System.register("auth/user", [], function(exports_14, context_14) {
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lc3NhZ2VzL21lc3NhZ2VzLmNvbXBvbmVudC50cyIsImF1dGgvc2lnbnVwLmNvbXBvbmVudC50cyIsImF1dGgvc2lnbmluLmNvbXBvbmVudC50cyIsImF1dGgvbG9nb3V0LmNvbXBvbmVudC50cyIsImF1dGgvYXV0aGVudGljYXRpb24uY29tcG9uZW50LnRzIiwibWVzc2FnZXMvbWVzc2FnZS50cyIsIm1lc3NhZ2VzL21lc3NhZ2Uuc2VydmljZS50cyIsIm1lc3NhZ2VzL21lc3NhZ2UuY29tcG9uZW50LnRzIiwibWVzc2FnZXMvbWVzc2FnZS1saXN0LmNvbXBvbmVudC50cyIsIm1lc3NhZ2VzL21lc3NhZ2UtaW5wdXQuY29tcG9uZW50LnRzIiwiYXBwLmNvbXBvbmVudC50cyIsImJvb3QudHMiLCJoZWFkZXIuY29tcG9uZW50LnRzIiwiYXV0aC91c2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1lBZUE7Z0JBQUE7Z0JBRUEsQ0FBQztnQkFkRDtvQkFBQyxnQkFBUyxDQUFDO3dCQUNWLFFBQVEsRUFBRSxRQUFRO3dCQUNsQixRQUFRLEVBQUUsd0xBT1Q7d0JBQ0EsVUFBVSxFQUFFLENBQUMsNkNBQW9CLEVBQUUsK0NBQXFCLENBQUM7cUJBQzFELENBQUM7O3FDQUFBO2dCQUdGLHdCQUFDO1lBQUQsQ0FGQSxBQUVDLElBQUE7WUFGRCxpREFFQyxDQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7WUNZRDtnQkFJQyx5QkFBb0IsR0FBZTtvQkFBZixRQUFHLEdBQUgsR0FBRyxDQUFZO2dCQUFFLENBQUM7Z0JBRXRDLGtDQUFRLEdBQVI7b0JBQ0MsT0FBTyxDQUFDLEdBQUcsQ0FBQyxNQUFNLENBQUMsS0FBSyxDQUFDLENBQUM7Z0JBQzNCLENBQUM7Z0JBRUQsa0NBQVEsR0FBUjtvQkFDQyxJQUFJLENBQUMsTUFBTSxHQUFHLElBQUksQ0FBQyxHQUFHLENBQUMsS0FBSyxDQUFDO3dCQUM1QixTQUFTLEVBQUUsQ0FBQyxFQUFFLEVBQUUsbUJBQVUsQ0FBQyxRQUFRLENBQUM7d0JBQ3BDLFFBQVEsRUFBRSxDQUFDLEVBQUUsRUFBRSxtQkFBVSxDQUFDLFFBQVEsQ0FBQzt3QkFDbkMsS0FBSyxFQUFFLENBQUMsRUFBRSxFQUFFLG1CQUFVLENBQUMsT0FBTyxDQUFDO2dDQUM5QixtQkFBVSxDQUFDLFFBQVE7Z0NBQ25CLElBQUksQ0FBQyxPQUFPOzZCQUNYLENBQUMsQ0FBQzt3QkFDSixRQUFRLEVBQUUsQ0FBQyxFQUFFLEVBQUUsbUJBQVUsQ0FBQyxRQUFRLENBQUM7cUJBQ25DLENBQUMsQ0FBQztnQkFDSixDQUFDO2dCQUVPLGlDQUFPLEdBQWYsVUFBZ0IsT0FBZ0I7b0JBQy9CLEVBQUUsQ0FBQyxDQUFDLENBQUMsT0FBTyxDQUFDLEtBQUssQ0FBQyxLQUFLLENBQUMseUJBQXlCLEVBQUMsQ0FBQyxDQUFDLENBQUEsRUFBRSxDQUFDLEdBQUcsQ0FBQyxDQUFDLEVBQUMsRUFBRyxFQUFHLEVBQUMsQ0FBQSxDQUFDO3dCQUFELENBQUM7b0JBQUUsQ0FBQyxDQUFBO29CQUFXLENBQUMsOEZBQThGLENBQUE7b0JBQUcsQ0FBQzt3QkFDdEwsTUFBTSxDQUFDLEVBQUMsV0FBVyxFQUFFLElBQUksRUFBQyxDQUFDO29CQUM1QixDQUFDO2dCQUNGLENBQUM7Z0JBckRGO29CQUFDLGdCQUFTLENBQUM7d0JBQ1YsUUFBUSxFQUFFLFdBQVc7d0JBQ3JCLFFBQVEsRUFBRSwrbUNBc0JUO3FCQUNELENBQUM7O21DQUFBO2dCQTZCRixzQkFBQztZQUFELENBM0JBLEFBMkJDLElBQUE7WUEzQkQsNkNBMkJDLENBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7OztZQ2xDRDtnQkFJQyx5QkFBb0IsR0FBZTtvQkFBZixRQUFHLEdBQUgsR0FBRyxDQUFZO2dCQUFFLENBQUM7Z0JBRXRDLGtDQUFRLEdBQVI7b0JBQ0MsT0FBTyxDQUFDLEdBQUcsQ0FBQyxNQUFNLENBQUMsS0FBSyxDQUFDLENBQUM7Z0JBQzNCLENBQUM7Z0JBRUQsa0NBQVEsR0FBUjtvQkFDQyxJQUFJLENBQUMsTUFBTSxHQUFHLElBQUksQ0FBQyxHQUFHLENBQUMsS0FBSyxDQUFDO3dCQUM1QixLQUFLLEVBQUUsQ0FBQyxFQUFFLEVBQUUsbUJBQVUsQ0FBQyxPQUFPLENBQUM7Z0NBQzlCLG1CQUFVLENBQUMsUUFBUTtnQ0FDbkIsSUFBSSxDQUFDLE9BQU87NkJBQ1gsQ0FBQyxDQUFDO3dCQUNKLFFBQVEsRUFBRSxDQUFDLEVBQUUsRUFBRSxtQkFBVSxDQUFDLFFBQVEsQ0FBQztxQkFDbkMsQ0FBQyxDQUFDO2dCQUNKLENBQUM7Z0JBRU8saUNBQU8sR0FBZixVQUFnQixPQUFnQjtvQkFDL0IsRUFBRSxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsS0FBSyxDQUFDLEtBQUssQ0FBQyx5QkFBeUIsRUFBQyxDQUFDLENBQUMsQ0FBQSxFQUFFLENBQUMsR0FBRyxDQUFDLENBQUMsRUFBQyxFQUFHLEVBQUcsRUFBQyxDQUFBLENBQUM7d0JBQUQsQ0FBQztvQkFBRSxDQUFDLENBQUE7b0JBQVcsQ0FBQyw4RkFBOEYsQ0FBQTtvQkFBRyxDQUFDO3dCQUN0TCxNQUFNLENBQUMsRUFBQyxXQUFXLEVBQUUsSUFBSSxFQUFDLENBQUM7b0JBQzVCLENBQUM7Z0JBQ0YsQ0FBQztnQkE1Q0Y7b0JBQUMsZ0JBQVMsQ0FBQzt3QkFDVixRQUFRLEVBQUUsV0FBVzt3QkFDckIsUUFBUSxFQUFFLG1yQkFlVDtxQkFDRCxDQUFDOzttQ0FBQTtnQkE0QkYsc0JBQUM7WUFBRCxDQTFCQSxBQTBCQyxJQUFBO1lBMUJELDZDQTBCQyxDQUFBOzs7Ozs7Ozs7Ozs7Ozs7WUN0Q0Q7Z0JBQUE7Z0JBSUEsQ0FBQztnQkFIQSxrQ0FBUSxHQUFSO2dCQUVBLENBQUM7Z0JBWkY7b0JBQUMsZ0JBQVMsQ0FBQzt3QkFDVixRQUFRLEVBQUUsV0FBVzt3QkFDckIsUUFBUSxFQUFFLHVKQUlUO3FCQUNELENBQUM7O21DQUFBO2dCQU1GLHNCQUFDO1lBQUQsQ0FKQSxBQUlDLElBQUE7WUFKRCw2Q0FJQyxDQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUN5QkQ7Z0JBQUE7Z0JBRUEsQ0FBQztnQkFwQ0Q7b0JBQUMsZ0JBQVMsQ0FBQzt3QkFDVixRQUFRLEVBQUUsU0FBUzt3QkFDbkIsUUFBUSxFQUFDLDJiQWNSO3dCQUNELFVBQVUsRUFBRSxDQUFDLGlCQUFpQixDQUFDO3dCQUMvQixNQUFNLEVBQUUsQ0FBQyw2TEFTUixDQUFDO3FCQUNGLENBQUM7b0JBQ0Qsb0JBQVcsQ0FBQzt3QkFDWixFQUFDLElBQUksRUFBRSxTQUFTLEVBQUUsSUFBSSxFQUFFLFFBQVEsRUFBRSxTQUFTLEVBQUUsa0NBQWUsRUFBRSxZQUFZLEVBQUUsSUFBSSxFQUFDO3dCQUNqRixFQUFDLElBQUksRUFBRSxTQUFTLEVBQUUsSUFBSSxFQUFFLFFBQVEsRUFBRSxTQUFTLEVBQUUsa0NBQWUsRUFBQzt3QkFDN0QsRUFBQyxJQUFJLEVBQUUsU0FBUyxFQUFFLElBQUksRUFBRSxRQUFRLEVBQUUsU0FBUyxFQUFFLGtDQUFlLEVBQUMsRUFBQyxDQUFBOzsyQ0FBQTtnQkFJL0QsOEJBQUM7WUFBRCxDQUZBLEFBRUMsSUFBQTtZQUZELDZEQUVDLENBQUE7Ozs7Ozs7Ozs7O1lDekNEO2dCQU1DLGlCQUFZLE9BQWUsRUFBRSxTQUFrQixFQUFFLFFBQWlCLEVBQUUsTUFBZTtvQkFDbEYsSUFBSSxDQUFDLE9BQU8sR0FBRyxPQUFPLENBQUM7b0JBQ3ZCLElBQUksQ0FBQyxTQUFTLEdBQUcsU0FBUyxDQUFDO29CQUMzQixJQUFJLENBQUMsUUFBUSxHQUFHLFFBQVEsQ0FBQztvQkFDekIsSUFBSSxDQUFDLE1BQU0sR0FBRyxNQUFNLENBQUM7Z0JBQ3RCLENBQUM7Z0JBQ0YsY0FBQztZQUFELENBWkEsQUFZQyxJQUFBO1lBWkQsNkJBWUMsQ0FBQTs7Ozs7Ozs7Ozs7Ozs7O1lDWEQ7Z0JBQUE7b0JBQ0MsYUFBUSxHQUFjLEVBQUUsQ0FBQztnQkFXekIsQ0FBQztnQkFURCxtQ0FBVSxHQUFWLFVBQVcsT0FBZ0I7b0JBQzFCLElBQUksQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxDQUFDO29CQUM1QixPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsQ0FBQztnQkFDNUIsQ0FBQztnQkFDRCxvQ0FBVyxHQUFYO29CQUNDLE1BQU0sQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDO2dCQUN0QixDQUFDO2dCQUdELHFCQUFDO1lBQUQsQ0FaRCxBQVlFLElBQUE7WUFaRiwyQ0FZRSxDQUFBO1lBQ0QsYUFBYSxDQUFDLE9BQU8sRUFBQyxpQkFBTyxDQUFDLENBQUE7WUFBQyxDQUFDO2dCQUMvQixJQUFJLENBQUMsUUFBUSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQztZQUN6RCxDQUFDOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUNvQkY7Z0JBSUMsMEJBQXFCLGVBQStCO29CQUEvQixvQkFBZSxHQUFmLGVBQWUsQ0FBZ0I7b0JBRjFDLGdCQUFXLEdBQUcsSUFBSSxtQkFBWSxFQUFVLENBQUM7Z0JBRUksQ0FBQztnQkFFeEQsaUNBQU0sR0FBTjtvQkFDQyxJQUFJLENBQUMsZUFBZSxDQUFDLFdBQVcsQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLENBQUM7Z0JBQ2hELENBQUM7Z0JBRUQsbUNBQVEsR0FBUjtvQkFDQyxJQUFJLENBQUMsZUFBZSxDQUFDLGFBQWEsQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLENBQUM7Z0JBQ2xELENBQUM7Z0JBR0Qsa0NBQU8sR0FBUDtvQkFDQyxJQUFJLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQztnQkFDbEMsQ0FBQztnQkFoQkQ7b0JBQUMsWUFBSyxFQUFFOztpRUFBQTtnQkFDUjtvQkFBQyxhQUFNLEVBQUU7O3FFQUFBO2dCQW5DVjtvQkFBQyxnQkFBUyxDQUFDO3dCQUNWLFFBQVEsRUFBRSxZQUFZO3dCQUN0QixRQUFRLEVBQUUsbWVBZVQ7d0JBQ0QsTUFBTSxFQUFFLENBQUMscVBBWUosQ0FBQztxQkFDTixDQUFDOztvQ0FBQTtnQkFvQkYsdUJBQUM7WUFBRCxDQWxCQSxBQWtCQyxJQUFBO1lBbEJELCtDQWtCQyxDQUFBOzs7Ozs7Ozs7Ozs7Ozs7OztZQzNDTSxLQUFLLENBQUE7WUFBQyxvQkFBb0IsQ0FBQTtZQUFDLFVBQVUsQ0FBQTtZQUFDLE1BQU0sQ0FBQTtZQUFDLENBQUM7Z0JBRXBELFdBQVcsQ0FBQyxPQUFPLEVBQUMsZUFBZSxFQUFFLGdDQUFjLENBQUMsQ0FBQTtnQkFBQyxDQUFDLENBQUEsQ0FBQztnQkFFdkQsUUFBUSxFQUFFLGlCQUFPLEVBQUUsQ0FBQztnQkFFcEIsUUFBUSxFQUFFLENBQUE7Z0JBQUEsQ0FBQztvQkFDVixJQUFJLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQyxlQUFlLENBQUMsV0FBVyxFQUFFLENBQUM7Z0JBRXBELENBQUM7WUFFRixDQUFDOzs7Ozs7Ozs7Ozs7Ozs7Ozs7WUNKRDtnQkFFQywrQkFBb0IsZUFBK0I7b0JBQS9CLG9CQUFlLEdBQWYsZUFBZSxDQUFnQjtnQkFBRyxDQUFDO2dCQUV2RCx3Q0FBUSxHQUFSLFVBQVMsSUFBUTtvQkFDaEIsSUFBTSxPQUFPLEdBQVksSUFBSSxpQkFBTyxDQUFDLElBQUksQ0FBQyxPQUFPLEVBQUUsSUFBSSxFQUFFLGdCQUFnQixDQUFDLENBQUM7b0JBQzNFLElBQUksQ0FBQyxlQUFlLENBQUMsVUFBVSxDQUFDLE9BQU8sQ0FBQyxDQUFDO2dCQUMxQyxDQUFDO2dCQXRCRjtvQkFBQyxnQkFBUyxDQUFDO3dCQUNWLFFBQVEsRUFBRSxrQkFBa0I7d0JBQzVCLFFBQVEsRUFBRSxpZEFVVDtxQkFDRCxDQUFDOzt5Q0FBQTtnQkFZRiw0QkFBQztZQUFELENBVkEsQUFVQyxJQUFBO1lBVkQsMERBVUMsQ0FBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1lDTkQ7Z0JBQUE7Z0JBRUEsQ0FBQztnQkFoQkQ7b0JBQUMsZ0JBQVMsQ0FBQzt3QkFDUCxRQUFRLEVBQUUsUUFBUTt3QkFDbEIsUUFBUSxFQUFFLHFJQUtUO3dCQUNELFVBQVUsRUFBRSxDQUFDLDBCQUFpQixFQUFFLGVBQWUsQ0FBQztxQkFDbkQsQ0FBQztvQkFDRCxvQkFBVyxDQUFDO3dCQUNaLEVBQUMsSUFBSSxFQUFFLEdBQUcsRUFBRSxJQUFJLEVBQUUsVUFBVSxFQUFFLFNBQVMsRUFBRSxzQ0FBaUIsRUFBRSxZQUFZLEVBQUUsSUFBSSxFQUFDO3dCQUMvRSxFQUFDLElBQUksRUFBRSxXQUFXLEVBQUUsSUFBSSxFQUFFLE1BQU0sRUFBRSxTQUFTLEVBQUUsa0RBQXVCLEVBQUM7cUJBQ3JFLENBQUM7O2dDQUFBO2dCQUdGLG1CQUFDO1lBQUQsQ0FGQSxBQUVDLElBQUE7WUFGRCx3Q0FFQyxDQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztZQ2pCRCxtQkFBUyxDQUFDLDRCQUFZLEVBQUUsQ0FBQyxnQ0FBYyxFQUFFLGdCQUFnQixFQUFFLGNBQU8sQ0FBQyx5QkFBZ0IsRUFBRSxFQUFDLFFBQVEsRUFBRSw2QkFBb0IsRUFBQyxDQUFDLENBQUMsQ0FBQyxDQUFDOzs7Ozs7Ozs7Ozs7Ozs7Ozs7WUMwQnpIO2dCQUFBO2dCQUVBLENBQUM7Z0JBakNEO29CQUFDLGlCQUFTLENBQUM7d0JBQ1YsUUFBUSxFQUFFLFdBQVc7d0JBQ3JCLFFBQVEsRUFBRSwyU0FTVDt3QkFDRCxVQUFVLEVBQUUsQ0FBQywwQkFBaUIsQ0FBQzt3QkFDL0IsTUFBTSxFQUFFLENBQUMsa1FBZ0JSLENBQUM7cUJBQ0YsQ0FBQzs7bUNBQUE7Z0JBR0Ysc0JBQUM7WUFBRCxDQUZBLEFBRUMsSUFBQTtZQUZELDhDQUVDLENBQUE7Ozs7Ozs7Ozs7O1lDbkNEO2dCQUNDLGNBQW1CLEtBQWEsRUFBRSxRQUFnQixFQUFFLFNBQWtCLEVBQUUsUUFBaUI7b0JBQXRFLFVBQUssR0FBTCxLQUFLLENBQVE7Z0JBQTRELENBQUM7Z0JBQzlGLFdBQUM7WUFBRCxDQUZBLEFBRUMsSUFBQTtZQUZELHdCQUVDLENBQUEiLCJmaWxlIjoiLi4vLi4vLi4vU2VlZCBQcm9qZWN0L2J1bmRsZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29tcG9uZW50fSBmcm9tIFwiYW5ndWxhcjIvY29yZVwiO1xyXG5pbXBvcnQge01lc3NhZ2VMaXN0Q29tcG9uZW50fSBmcm9tIFwiLi9tZXNzYWdlcy9tZXNzYWdlLWxpc3QuY29tcG9uZW50XCI7XHJcbmltcG9ydCB7TWVzc2FnZUlucHV0Q29tcG9uZW50fSBmcm9tIFwiLi9tZXNzYWdlcy9tZXNzYWdlLWlucHV0LmNvbXBvbmVudFwiO1xyXG5AQ29tcG9uZW50KHtcclxuXHRzZWxlY3RvcjogJ215LWFwcCcsXHJcblx0dGVtcGxhdGU6IGBcclxuXHRcdDxkaXYgY2xhc3M9XCJyb3cgc3BhY2luZ1wiPlxyXG5cdFx0XHQ8bXktbWVzc2FnZS1pbnB1dD48L215LW1lc3NhZ2UtaW5wdXQ+XHJcblx0XHQ8L2Rpdj5cclxuXHRcdDxkaXYgY2xhc3M9XCJyb3cgc3BhY2luZ1wiPlxyXG5cdFx0XHQ8bXktbWVzc2FnZS1saXN0PjwvbXktbWVzc2FnZS1saXN0PlxyXG5cdFx0PC9kaXY+XHJcblx0YFxyXG5cdCBkaXJlY3RpdmVzOiBbTWVzc2FnZUxpc3RDb21wb25lbnQsIE1lc3NhZ2VJbnB1dENvbXBvbmVudF1cclxufSlcclxuZXhwb3J0IGNsYXNzIE1lc3NhZ2VzQ29tcG9uZW50IHtcclxuXHRcclxufSIsImltcG9ydCB7Q29tcG9uZW50LCBPbkl0fSBmcm9tIFwiYW5ndWxhcjIvY29yZVwiO1xyXG5pbXBvcnQge0Zvcm1CdWlsZGVyLCBDb250cm9sR3JvdXAsIFZhbGlkYXRvcnMsIENvbnRyb2x9IGZyb20gXCJhbmd1bGFyMi9jb21tb25cIjtcclxuQENvbXBvbmVudCh7XHJcblx0c2VsZWN0b3I6ICdteS1zaWdudXAnO1xyXG5cdHRlbXBsYXRlOiBgXHJcblx0XHQ8c2VjdGlvbiBjbGFzcz1cImNvbC1tZC04IGNvbC1tZC1vZmZzZXQtMlwiPlxyXG5cdFx0XHQ8Zm9ybSBbbmdGb3JtTW9kZWxdPVwibXlGb3JtXCIgKG5nU3VibWl0KT1cIm9uU3VibWl0KClcIj5cclxuXHRcdFx0XHQ8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cFwiPlxyXG5cdFx0XHRcdFx0PGxhYmVsIGZvcj1cImZpcnN0TmFtZVwiPkZpcnN0IE5hbWU8L2xhYmVsPlxyXG5cdFx0XHRcdFx0PGlucHV0IFtuZ0Zvcm1Db250cm9sXT1cIm15Rm9ybS5maW5kKCdmaXJzdE5hbWUnKVwiIHR5cGU9XCJ0ZXh0XCIgaWQ9XCJmaXJzdE5hbWVcIiBjbGFzcz1cImZvcm0tY29udHJvbFwiPlxyXG5cdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XHJcblx0XHRcdFx0XHQ8bGFiZWwgZm9yPVwibGFzdE5hbWVcIj5MYXN0IE5hbWU8L2xhYmVsPlxyXG5cdFx0XHRcdFx0PGlucHV0IFtuZ0Zvcm1Db250cm9sXT1cIm15Rm9ybS5maW5kKCdsYXN0TmFtZScpXCIgdHlwZT1cInRleHRcIiBpZD1cImxhc3ROYW1lXCIgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIj5cclxuXHRcdFx0XHQ8L2Rpdj5cclxuXHRcdFx0XHQ8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cFwiPlxyXG5cdFx0XHRcdFx0PGxhYmVsIGZvcj1cImVtYWlsXCI+TWFpbDwvbGFiZWw+XHJcblx0XHRcdFx0XHQ8aW5wdXQgW25nRm9ybUNvbnRyb2xdPVwibXlGb3JtLmZpbmQoJ2VtYWlsJylcIiB0eXBlPVwiZW1haWxcIiBpZD1cImVtYWlsXCIgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIj5cclxuXHRcdFx0XHQ8L2Rpdj5cclxuXHRcdFx0XHQ8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cFwiPlxyXG5cdFx0XHRcdFx0PGxhYmVsIGZvcj1cInBhc3N3b3JkXCI+UGFzc3dvcmQ8L2xhYmVsPlxyXG5cdFx0XHRcdFx0PGlucHV0IFtuZ0Zvcm1Db250cm9sXT1cIm15Rm9ybS5maW5kKCdwYXNzd29yZCcpXCIgdHlwZT1cInBhc3N3b3JkXCIgaWQ9XCJwYXNzd29yZFwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCI+XHJcblx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0PGJ1dHRvbiB0eXBlPVwic3VibWl0XCIgY2xhc3M9XCJidG4gYnRuLXByaW1hcnlcIiBbZGlzYWJsZWRdPVwiIW15Rm9ybS52YWxpZFwiPlNpZ24gVXA8L2J1dHRvbj5cclxuXHRcdFx0PC9mb3JtPlxyXG5cdFx0PC9zZWN0aW9uPlxyXG5cdGBcclxufSlcclxuXHJcbmV4cG9ydCBjbGFzcyBTaWdudXBDb21wb25lbnQgaW1wbGVtZW50cyBPbkluaXR7XHJcblxyXG5cdG15Rm9ybTpDb250cm9sR3JvdXA7XHJcblxyXG5cdGNvbnN0cnVjdG9yKHByaXZhdGUgX2ZiOkZvcm1CdWlsZGVyKXt9XHJcblxyXG5cdG9uU3VibWl0KCl7XHJcblx0XHRjb25zb2xlLmxvZyhteUZvcm0udmFsdWUpO1xyXG5cdH1cclxuXHJcblx0bmdPbkluaXQoKXtcclxuXHRcdHRoaXMubXlGb3JtID0gdGhpcy5fZmIuZ3JvdXAoe1xyXG5cdFx0XHRmaXJzdE5hbWU6IFsnJywgVmFsaWRhdG9ycy5yZXF1aXJlZF0sXHJcblx0XHRcdGxhc3ROYW1lOiBbJycsIFZhbGlkYXRvcnMucmVxdWlyZWRdLFxyXG5cdFx0XHRlbWFpbDogWycnLCBWYWxpZGF0b3JzLmNvbXBvc2UoW1xyXG5cdFx0XHRcdFZhbGlkYXRvcnMucmVxdWlyZWQsXHJcblx0XHRcdFx0dGhpcy5pc0VtYWlsXHJcblx0XHRcdFx0XSldLFxyXG5cdFx0XHRwYXNzd29yZDogWycnLCBWYWxpZGF0b3JzLnJlcXVpcmVkXVxyXG5cdFx0fSk7XHJcblx0fVxyXG5cclxuXHRwcml2YXRlIGlzRW1haWwoY29udHJvbDogQ29udHJvbCk6IHtbczogc3RyaW5nXTogYm9vbGVhbn0ge1xyXG5cdFx0aWYgKCFjb250cm9sLnZhbHVlLm1hdGNoKFwiL14oKFtePD4oKVxcW1xcXVxcXFwuLDs6XFxzQFwiXSsoXFwuW148PigpXFxbXFxdXFxcXC4sOzpcXHNAXCJdKykqKXwoXCIuK1wiKSlAKChcXFtbMC05XXsxLDN9XFwuWzAtOV17MSwzfVxcLlswLTldezEsM31cXC5bMC05XXsxLDN9XSl8KChbYS16QS1aXFwtMC05XStcXC4pK1thLXpBLVpdezIsfSkpJC9cIikpIHtcclxuXHRcdFx0cmV0dXJuIHtpbnZhbGlkTWFpbDogdHJ1ZX07XHJcblx0XHR9XHJcblx0fVxyXG59IiwiaW1wb3J0IHtDb21wb25lbnQsIE9uSW5pdH0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcclxuaW1wb3J0IHtGb3JtQnVpbGRlciwgQ29udHJvbEdyb3VwLCBWYWxpZGF0b3JzLCBDb250cm9sfSBmcm9tIFwiYW5ndWxhcjIvY29tbW9uXCI7XHJcbkBDb21wb25lbnQoe1xyXG5cdHNlbGVjdG9yOiAnbXktc2lnbmluJyxcclxuXHR0ZW1wbGF0ZTogYFxyXG5cdFx0PHNlY3Rpb24gY2xhc3M9XCJjb2wtbWQtOCBjb2wtbWQtb2Zmc2V0LTJcIj5cclxuXHRcdFx0PGZvcm0gW25nRm9ybU1vZGVsXT1cIm15Rm9ybVwiIChuZ1N1Ym1pdCk9XCJvblN1Ym1pdCgpXCI+XHJcblx0XHRcdFx0PGRpdiBjbGFzcz1cImZvcm0tZ3JvdXBcIj5cclxuXHRcdFx0XHRcdDxsYWJlbCBmb3I9XCJlbWFpbFwiPk1haWw8L2xhYmVsPlxyXG5cdFx0XHRcdFx0PGlucHV0IFtuZ0Zvcm1Db250cm9sXT1cIm15Rm9ybS5maW5kKCdlbWFpbCcpXCIgdHlwZT1cImVtYWlsXCIgaWQ9XCJlbWFpbFwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCI+XHJcblx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0PGRpdiBjbGFzcz1cImZvcm0tZ3JvdXBcIj5cclxuXHRcdFx0XHRcdDxsYWJlbCBmb3I9XCJwYXNzd29yZFwiPlBhc3N3b3JkPC9sYWJlbD5cclxuXHRcdFx0XHRcdDxpbnB1dCBbbmdGb3JtQ29udHJvbF09XCJteUZvcm0uZmluZCgncGFzc3dvcmQnKVwiIHR5cGU9XCJwYXNzd29yZFwiIGlkPVwicGFzc3dvcmRcIiBjbGFzcz1cImZvcm0tY29udHJvbFwiPlxyXG5cdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdDxidXR0b24gdHlwZT1cInN1Ym1pdFwiIGNsYXNzPVwiYnRuIGJ0bi1wcmltYXJ5XCIgW2Rpc2FibGVkXT1cIiFteUZvcm0udmFsaWRcIj5TaWduIFVwPC9idXR0b24+XHJcblx0XHRcdDwvZm9ybT5cclxuXHRcdDwvc2VjdGlvbj5cclxuXHJcblx0YFxyXG59KVxyXG5cclxuZXhwb3J0IGNsYXNzIFNpZ25JbkNvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XHJcblx0XHJcblx0bXlGb3JtOkNvbnRyb2xHcm91cDtcclxuXHJcblx0Y29uc3RydWN0b3IocHJpdmF0ZSBfZmI6Rm9ybUJ1aWxkZXIpe31cclxuXHJcblx0b25TdWJtaXQoKXtcclxuXHRcdGNvbnNvbGUubG9nKG15Rm9ybS52YWx1ZSk7XHJcblx0fVxyXG5cclxuXHRuZ09uSW5pdCgpe1xyXG5cdFx0dGhpcy5teUZvcm0gPSB0aGlzLl9mYi5ncm91cCh7XHJcblx0XHRcdGVtYWlsOiBbJycsIFZhbGlkYXRvcnMuY29tcG9zZShbXHJcblx0XHRcdFx0VmFsaWRhdG9ycy5yZXF1aXJlZCxcclxuXHRcdFx0XHR0aGlzLmlzRW1haWxcclxuXHRcdFx0XHRdKV0sXHJcblx0XHRcdHBhc3N3b3JkOiBbJycsIFZhbGlkYXRvcnMucmVxdWlyZWRdXHJcblx0XHR9KTtcclxuXHR9XHJcblxyXG5cdHByaXZhdGUgaXNFbWFpbChjb250cm9sOiBDb250cm9sKToge1tzOiBzdHJpbmddOiBib29sZWFufSB7XHJcblx0XHRpZiAoIWNvbnRyb2wudmFsdWUubWF0Y2goXCIvXigoW148PigpXFxbXFxdXFxcXC4sOzpcXHNAXCJdKyhcXC5bXjw+KClcXFtcXF1cXFxcLiw7Olxcc0BcIl0rKSopfChcIi4rXCIpKUAoKFxcW1swLTldezEsM31cXC5bMC05XXsxLDN9XFwuWzAtOV17MSwzfVxcLlswLTldezEsM31dKXwoKFthLXpBLVpcXC0wLTldK1xcLikrW2EtekEtWl17Mix9KSkkL1wiKSkge1xyXG5cdFx0XHRyZXR1cm4ge2ludmFsaWRNYWlsOiB0cnVlfTtcclxuXHRcdH1cclxuXHR9XHJcblx0XHJcbn0iLCJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcclxuQENvbXBvbmVudCh7XHJcblx0c2VsZWN0b3I6ICdteS1sb2dvdXQnLFxyXG5cdHRlbXBsYXRlOiBgXHJcblx0XHQ8c2VjdGlvbiBjbGFzcz1cImNvbC1tZC04IGNvbC1tZC1vZmZzZXQtMlwiPlxyXG5cdFx0XHQ8YnV0dG9uIGNsYXNzPVwiYnRuIGJ0bi1kYW5nZXJcIiAoY2xpY2spPVwib25Mb2dvdXQoKVwiPkxvZ291dDwvYnV0dG9uPlxyXG5cdFx0PC9zZWN0aW9uPlxyXG5cdGBcclxufSlcclxuXHJcbmV4cG9ydCBjbGFzcyBMb2dvdXRDb21wb25lbnQge1xyXG5cdG9uTG9nb3V0KCl7XHJcblx0XHJcblx0fVxyXG59IiwiaW1wb3J0IHtDb21wb25lbnR9IGZyb20gXCJhbmd1bGFyMi9jb3JlXCI7XHJcbmltcG9ydCB7U2lnbnVwQ29tcG9uZW50fSBmcm9tIFwiLi9zaWdudXAuY29tcG9uZW50XCI7XHJcbmltcG9ydCB7U2lnbmluQ29tcG9uZW50fSBmcm9tIFwiLi9zaWduaW4uY29tcG9uZW50XCI7XHJcbmltcG9ydCB7TG9nb3V0Q29tcG9uZW50fSBmcm9tIFwiLi9sb2dvdXQuY29tcG9uZW50XCI7XHJcbmltcG9ydCB7Um91dGVDb25maWd9IGZyb20gXCJhbmd1bGFyMi9yb3V0ZXJcIjtcclxuQENvbXBvbmVudCh7XHJcblx0c2VsZWN0b3I6ICdteS1hdXRoJyxcclxuXHR0ZW1wbGF0ZTpgXHJcblx0XHQ8aGVhZGVyIGNsYXNzPVwicm93IHNwYWNpbmdcIj5cclxuXHRcdFx0PG5hdiBjbGFzcz1cImNvbC1tZC04IGNvbC1tZC1vZmZzZXQtMlwiPlxyXG5cdFx0XHRcdDx1bCBjbGFzcz1cIm5hdiBuYXYtdGFic1wiPlxyXG5cdFx0XHRcdFx0PGxpPjxhIFtyb3V0ZXJMaW5rXT1cIlsnU2lnbnVwJ11cIj5TaWdudXA8L2E+PC9saT5cclxuXHRcdFx0XHRcdDxsaT48YSBbcm91dGVyTGlua109XCJbJ1NpZ25pbiddXCI+U2lnbmluPC9hPjwvbGk+XHJcblx0XHRcdFx0XHQ8bGk+PGEgW3JvdXRlckxpbmtdPVwiWydMb2dvdXQnXVwiPkxvZ291dDwvYT48L2xpPlxyXG5cdFx0XHRcdDwvdWw+XHJcblx0XHRcdDwvbmF2PlxyXG5cdFx0PC9oZWFkZXI+XHJcblx0XHQ8ZGl2IGNsYXNzPVwicm93IHNwYWNpbmdcIj5cclxuXHRcdFx0PHJvdXRlci1vdXRsZXQ+PC9yb3V0ZXItb3V0bGV0PlxyXG5cdFx0PC9kaXY+XHJcblxyXG5cdGAsXHJcblx0ZGlyZWN0aXZlczogW1JPVVRFUl9ESVJFQ1RJVkVTXVxyXG5cdHN0eWxlczogW2BcclxuXHRcdC5yb3V0ZXItbGluay1hY3RpdmUge1xyXG5cdFx0XHRjb2xvcjogIzU1NTtcclxuXHRcdFx0Y3Vyc29yOiBkZWZhdWx0O1xyXG5cdFx0XHRiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG5cdFx0XHRib3JkZXI6IDFweCBzb2xpZCAjZGRkO1xyXG5cdFx0XHRib3JkZXItYm90dG9tLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuXHRcdH1cclxuXHJcblx0YF1cclxufSlcclxuQFJvdXRlQ29uZmlnKFtcclxuXHR7cGF0aDogJy9zaWdudXAnLCBuYW1lOiAnU2lnbnVwJywgY29tcG9uZW50OiBTaWdudXBDb21wb25lbnQsIHVzZUFzRGVmYXVsdDogdHJ1ZX0sXHJcblx0e3BhdGg6ICcvc2lnbmluJywgbmFtZTogJ1NpZ25pbicsIGNvbXBvbmVudDogU2lnbmluQ29tcG9uZW50fSxcclxuXHR7cGF0aDogJy9sb2dvdXQnLCBuYW1lOiAnTG9nb3V0JywgY29tcG9uZW50OiBMb2dvdXRDb21wb25lbnR9LFxyXG5cclxuZXhwb3J0IGNsYXNzIEF1dGhlbnRpY2F0aW9uQ29tcG9uZW50IHtcclxuXHRcclxufSIsImV4cG9ydCBjbGFzcyBNZXNzYWdlIHtcclxuXHRjb250ZW50OiBzdHJpbmc7XHJcblx0dXNlcm5hbWU6IHN0cmluZztcclxuXHRtZXNzYWdlSWQ6IHN0cmluZztcclxuXHR1c2VySWQ6IHN0cmluZztcclxuXHJcblx0Y29uc3RydWN0b3IoY29udGVudDogc3RyaW5nLCBtZXNzYWdlSWQ/OiBzdHJpbmcsIHVzZXJuYW1lPzogc3RyaW5nLCB1c2VySWQ/OiBzdHJpbmcpIHtcclxuXHRcdHRoaXMuY29udGVudCA9IGNvbnRlbnQ7XHJcblx0XHR0aGlzLm1lc3NhZ2VJZCA9IG1lc3NhZ2VJZDtcclxuXHRcdHRoaXMudXNlcm5hbWUgPSB1c2VybmFtZTtcclxuXHRcdHRoaXMudXNlcklkID0gdXNlcklkO1xyXG5cdH1cclxufSIsImltcG9ydCB7TWVzc2FnZX0gZnJvbSBcIi4vbWVzc2FnZVwiO1xyXG5leHBvcnQgY2xhc3MgTWVzc2FnZVNlcnZpY2Uge1xyXG5cdG1lc3NhZ2VzOiBNZXNzYWdlW10gPSBbXTtcclxuXHJcblx0YWRkTWVzc2FnZShtZXNzYWdlOiBNZXNzYWdlKSB7XHJcblx0XHR0aGlzLm1lc3NhZ2VzLnB1c2gobWVzc2FnZSk7XHJcblx0XHRjb25zb2xlLmxvZyh0aGlzLm1lc3NhZ2VzKTtcclxuXHR9XHJcblx0Z2V0TWVzc2FnZXMoKXtcclxuXHRcdHJldHVybiB0aGlzLm1lc3NhZ2VzO1xyXG5cdH1cclxuXHRlZGl0TWVzc2FnZShtZXNzYWdlOiBNZXNzYWdle1xyXG5cdFx0dGhpcy5tZXNzYWdlc1t0aGlzLm1lc3NhZ2VzLmluZGV4T2YobWVzc2FnZSldID0gbmV3IE1lc3NhZ2UoJ0VkaXRlZCcsIG51bGwsICdEdW1teVVzZXJOYW1lJzspXHJcblx0fVxyXG5cdGRlbGV0ZU1lc3NhZ2UobWVzc2FnZTpNZXNzYWdlKSB7XHJcblx0XHR0aGlzLm1lc3NhZ2VzLnNwbGljZSh0aGlzLm1lc3NhZ2VzLmluZGV4T2YobWVzc2FnZSksIDEpO1xyXG5cdH1cclxuXHRcclxufSIsImltcG9ydCB7Q29tcG9uZW50LCBJbnB1dCwgT3V0cHV0LCBFdmVudEVtaXR0ZXJ9IGZyb20gXCJhbmd1bGFyMi9jb3JlXCI7XHJcbmltcG9ydCB7TWVzc2FnZX0gZnJvbSBcIi4vbWVzc2FnZVwiO1xyXG5pbXBvcnQge01lc3NhZ2VTZXJ2aWNlfSBmcm9tIFwiLi9tZXNzYWdlLnNlcnZpY2VcIjtcclxuQENvbXBvbmVudCh7XHJcblx0c2VsZWN0b3I6ICdteS1tZXNzYWdlJyxcclxuXHR0ZW1wbGF0ZTogYFxyXG5cdFx0PGFydGljbGUgY2xhc3M9XCJwYW5lbCBwYW5lbC1kZWZhdWx0XCI+XHJcblx0ICAgICAgICA8ZGl2IGNsYXNzPVwicGFuZWwtYm9keVwiPlxyXG5cdCAgICAgICAgXHR7eyBtZXNzYWdlLmNvbnRlbnQgfX1cclxuXHQgICAgICAgIDwvZGl2PlxyXG5cdCAgICAgICAgPGZvb3RlciBjbGFzcz1cInBhbmVsLWZvb3RlclwiPlxyXG5cdCAgICAgICAgPGRpdiBjbGFzcz1cImF1dGhvclwiPlxyXG5cdCAgICAgICAgXHR7eyBtZXNzYWdlLnVzZXJuYW1lIH19XHJcblx0ICAgICAgICA8L2Rpdj5cclxuXHQgICAgICAgIDxkaXYgY2xhc3M9XCJjb25maWdcIj5cclxuXHQgICAgICAgIFx0PGEgaHJlZj1cIiNcIiAoY2xpY2spPVwib25FZGl0KClcIj5FZGl0PC9hPlxyXG5cdCAgICAgICBcdFx0PGEgaHJlZj1cIiNcIiAoY2xpY2spPVwib25EZWxldGUoKVwiPkRlbGV0ZTwvYT5cclxuXHQgICAgICAgIDwvZGl2PlxyXG5cdCAgICAgICAgPC9mb290ZXI+XHJcblx0ICAgIDwvYXJ0aWNsZT5cclxuXHRgLFxyXG5cdHN0eWxlczogW2BcclxuICAgIC5hdXRob3Ige1xyXG4gICAgXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBcdGZvbnQtc3R5bGU6IGl0YWxpYztcclxuICAgIFx0Zm9udC1zaXplOiAxMnB4O1xyXG4gICAgXHR3aWR0aDogODAlO1xyXG4gICAgfVxyXG4gICAgLmNvbmZpZyB7XHJcbiAgICBcdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIFx0dGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBcdGZvbnQtc2l6ZTogMTJweDtcclxuICAgIFx0d2lkdGg6IDE5JTtcclxuICAgIH1gXVxyXG59KVxyXG5cclxuZXhwb3J0IGNsYXNzIE1lc3NhZ2VDb21wb25lbnQge1xyXG5cdEBJbnB1dCgpIG1lc3NhZ2U6TWVzc2FnZTtcclxuXHRAT3V0cHV0KCkgZWRpdENsaWNrZWQgPSBuZXcgRXZlbnRFbWl0dGVyPHN0cmluZz4oKTtcclxuXHJcblx0Y29uc3RydWN0b3IgKHByaXZhdGUgX21lc3NhZ2VTZXJ2aWNlOiBNZXNzYWdlU2VydmljZSkge31cclxuXHJcblx0b25FZGl0KCl7XHJcblx0XHR0aGlzLl9tZXNzYWdlU2VydmljZS5lZGl0TWVzc2FnZSh0aGlzLm1lc3NhZ2UpO1xyXG5cdH1cclxuXHJcblx0b25EZWxldGUoKXtcclxuXHRcdHRoaXMuX21lc3NhZ2VTZXJ2aWNlLmRlbGV0ZU1lc3NhZ2UodGhpcy5tZXNzYWdlKTtcclxuXHR9XHJcblx0XHJcblxyXG5cdG9uQ2xpY2soKSB7XHJcblx0XHR0aGlzLmVkaXRDbGlja2VkLmVtaXQoJ0NoYW5nZWQnKTtcclxuXHR9XHJcbn0iLCJpbXBvcnQge0NvbXBvbmVudCwgT25Jbml0fSBmcm9tIFwiYW5ndWxhcjIvY29yZVwiO1xyXG5pbXBvcnQge01lc3NhZ2VDb21wb25lbnR9IGZyb20gXCIuL21lc3NhZ2UuY29tcG9uZW50XCI7XHJcbmltcG9ydCB7TWVzc2FnZX0gZnJvbSBcIi4vbWVzc2FnZVwiO1xyXG5pbXBvcnQge01lc3NhZ2VTZXJ2aWNlfSBmcm9tIFwiLi9tZXNzYWdlLnNlcnZpY2VcIjtcclxuQENvbXBvbmVudCh7XHJcblx0c2VsZWN0b3I6ICdteS1tZXNzYWdlLWxpc3QnLFxyXG5cdHRlbXBsYXRlOiBgXHJcblx0XHQ8bXktbWVzc2FnZSAqbmdGb3I9XCIjbWVzc2FnZSBvZiBtZXNzYWdlc1wiIFttZXNzYWdlXT1cIm1lc3NhZ2VcIiAoZWRpdENsaWNrZWQpPVwibWVzc2FnZS5jb250ZW50ID0gJGV2ZW50XCI+PC9teS1tZXNzYWdlPlxyXG5cdGAsXHJcbiAgICBkaXJlY3RpdmVzOiBbTWVzc2FnZUNvbXBvbmVudF1cclxufSlcclxuZXhwb3J0IENsYXNzIE1lc3NhZ2VMaXN0Q29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcclxuXHRcclxuXHRjb25zdHJ1Y3Rvcihwcml2YXRlIF9tZXNzYWdlU2VydmljZTogTWVzc2FnZVNlcnZpY2UpIHt9XHJcblxyXG5cdG1lc3NhZ2VzOiBNZXNzYWdlW107XHJcblxyXG5cdG5nT25Jbml0KCl7XHJcblx0XHR0aGlzLm1lc3NhZ2VzID0gdGhpcy5fbWVzc2FnZVNlcnZpY2UuZ2V0TWVzc2FnZXMoKTtcclxuXHJcblx0fVxyXG5cdFxyXG59IiwiaW1wb3J0IHtDb21wb25lbnR9IGZyb20gXCJhbmd1bGFyMi9jb3JlXCI7XHJcbmltcG9ydCB7TWVzc2FnZX0gZnJvbSBcIi4vbWVzc2FnZVwiO1xyXG5pbXBvcnQge01lc2FnZVNlcnZpY2V9IGZyb20gXCIuL21lc3NhZ2Uuc2VydmljZVwiO1xyXG5AQ29tcG9uZW50KHtcclxuXHRzZWxlY3RvcjogJ215LW1lc3NhZ2UtaW5wdXQnLFxyXG5cdHRlbXBsYXRlOiBgXHJcblx0XHQ8c2VjdGlvbiBjbGFzcz1cImNvbC1tZC04IGNvbC1tZC1vZmZzZXQtMlwiPlxyXG5cdFx0XHQ8Zm9ybSAobmdTdWJtaXQpPVwib25TdWJtaXQoZi52YWx1ZSlcIiAjZj1cIm5nRm9ybVwiPlxyXG5cdFx0XHRcdDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XHJcblx0XHRcdFx0XHQ8bGFiZWwgZm9yPVwiY29udGVudFwiPkNvbnRlbnQ8L2xhYmVsPlxyXG5cdFx0XHRcdFx0PGlucHV0IG5nQ29udHJvbD1cImNvbnRlbnRcIiB0eXBlPVwidGV4dFwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCIgaWQ9XCJjb250ZW50XCIgI2lucHV0PlxyXG5cdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdDxidXR0b24gdHlwZT1cInN1Ym1pdFwiIGNsYXNzPVwiYnRuIGJ0bi1wcmltYXJ5XCIgKGNsaWNrKT1cIm9uQ3JlYXRlKGlucHV0LnZhbHVlKVwiPlNlbmQgTWVzc2FnZTwvYnV0dG9uPlxyXG5cdFx0XHQ8L2Zvcm0+XHJcblx0XHQ8L3NlY3Rpb24+XHJcblx0YFxyXG59KVxyXG5cclxuZXhwb3J0IGNsYXNzIE1lc3NhZ2VJbnB1dENvbXBvbmVudCB7XHJcblxyXG5cdGNvbnN0cnVjdG9yKHByaXZhdGUgX21lc3NhZ2VTZXJ2aWNlOiBNZXNzYWdlU2VydmljZSkge31cclxuXHJcblx0b25TdWJtaXQoZm9ybTphbnkpe1xyXG5cdFx0Y29uc3QgbWVzc2FnZTogTWVzc2FnZSA9IG5ldyBNZXNzYWdlKGZvcm0uY29udGVudCwgbnVsbCwgJ0R1bW15IFVzZXJOYW1lJyk7XHJcblx0XHR0aGlzLl9tZXNzYWdlU2VydmljZS5hZGRNZXNzYWdlKG1lc3NhZ2UpO1xyXG5cdH1cclxuXHRcclxuXHRcclxufSIsImltcG9ydCB7Q29tcG9uZW50fSBmcm9tIFwiYW5ndWxhcjIvY29yZVwiO1xuaW1wb3J0IHtSb3V0ZUNvbmZpZywgUk9VVEVSX0RJUkVDVElWRVN9IGZyb20gXCJhbmd1bGFyMi9yb3V0ZXJcIjtcbmltcG9ydCB7TWVzc2FnZXNDb21wb25lbnR9IGZyb20gXCIuL21lc3NhZ2VzL21lc3NhZ2VzLmNvbXBvbmVudFwiO1xuaW1wb3J0IHtBdXRoZW50aWNhdGlvbkNvbXBvbmVudH0gZnJvbSBcIi4vYXV0aC9hdXRoZW50aWNhdGlvbi5jb21wb25lbnRcIjtcbmltcG9ydCB7TWVzc2FnZUxpc3RDb21wb25lbnR9IGZyb20gXCIuL21lc3NhZ2VzL21lc3NhZ2UtbGlzdC1jb21wb25lbnRcIjtcbmltcG9ydCB7TWVzc2FnZUlucHV0Q29tcG9uZW50fSBmcm9tIFwiLi9tZXNzYWdlcy9tZXNzYWdlLWlucHV0LWNvbXBvbmVudFwiO1xuaW1wb3J0IHtNZXNzYWdlTGlzdENvbXBvbmVudH0gZnJvbSBcIi4vbWVzc2FnZXMvbWVzc2FnZS1saXN0LmNvbXBvbmVudFwiO1xuaW1wb3J0IHtNZXNzYWdlSW5wdXRDb21wb25lbnR9IGZyb20gXCIuL21lc3NhZ2VzL21lc3NhZ2UtaW5wdXQuY29tcG9uZW50XCI7XG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ215LWFwcCcsXG4gICAgdGVtcGxhdGU6IGAgXG4gICAgXHQ8ZGl2IGNsYXNzPVwiY29udGFpbmVyXCI+XG4gICAgXHRcdDxteS1oZWFkZXI+PC9teS1oZWFkZXI+XG4gICAgXHRcdDxyb3V0ZXItb3V0bGV0Pjwvcm91dGVyLW91dGxldD5cbiAgICBcdDwvZGl2PiBcdFxuICAgIGAsXG4gICAgZGlyZWN0aXZlczogW1JPVVRFUl9ESVJFQ1RJVkVTLCBIZWFkZXJDb21wb25lbnRdXG59KVxuQFJvdXRlQ29uZmlnKFtcblx0e3BhdGg6ICcvJywgbmFtZTogJ01lc3NhZ2VzJywgY29tcG9uZW50OiBNZXNzYWdlc0NvbXBvbmVudCwgdXNlQXNEZWZhdWx0OiB0cnVlfSxcblx0e3BhdGg6ICcvYXV0aC8uLi4nLCBuYW1lOiAnQXV0aCcsIGNvbXBvbmVudDogQXV0aGVudGljYXRpb25Db21wb25lbnR9XG5dKVxuZXhwb3J0IGNsYXNzIEFwcENvbXBvbmVudCB7XG5cdFxufSIsIi8vLzxyZWZlcmVuY2UgcGF0aD1cIi4uLy4uL25vZGVfbW9kdWxlcy9hbmd1bGFyMi90eXBpbmdzL2Jyb3dzZXIuZC50c1wiLz5cbmltcG9ydCB7Ym9vdHN0cmFwfSBmcm9tICdhbmd1bGFyMi9wbGF0Zm9ybS9icm93c2VyJztcbmltcG9ydCB7QXBwQ29tcG9uZW50fSBmcm9tIFwiLi9hcHAuY29tcG9uZW50XCI7XG5pbXBvcnQge01lc3NhZ2VTZXJ2aWNlfSBmcm9tIFwiLi9tZXNzYWdlcy9tZXNzYWdlLnNlcnZpY2VcIjtcbmltcG9ydCB7Uk9VVEVfUFJPVklERVJTLCBMb2NhdGlvblN0cmF0ZWd5LCBIYXNoTG9jYXRpb25TdHJhdGVneX0gZnJvbSAnYW5ndWxhcjIvcm91dGVyJztcbmltcG9ydCB7cHJvdmlkZX0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XG5cbmJvb3RzdHJhcChBcHBDb21wb25lbnQsIFtNZXNzYWdlU2VydmljZSwgUk9VVEVSX1BST1ZJREVSUywgcHJvdmlkZShMb2NhdGlvblN0cmF0ZWd5LCB7dXNlQ2xhc3M6IEhhc2hMb2NhdGlvblN0cmF0ZWd5fSldKTsiLCJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcclxuaW1wb3J0IHtST1VURVJfRElSRUNUSVZFU30gZnJvbSBcImFuZ3VsYXIyL3JvdXRlclwiO1xyXG5AQ29tcG9uZW50KHtcclxuXHRzZWxlY3RvcjogJ215LWhlYWRlcicsXHJcblx0dGVtcGxhdGU6IGBcclxuXHRcdDxoZWFkZXIgY2xhc3M9XCJyb3dcIj5cclxuXHRcdFx0PG5hdiBjbGFzcz1cImNvbC1tZC04IGNvbC1tZC1vZmZzZXQtMlwiPlxyXG5cdFx0XHRcdDx1bCBjbGFzcz1cIm5hdiBuYXYtcGlsbHNcIj5cclxuXHRcdFx0XHRcdDxsaT48YSBbcm91dGVyTGlua109XCJbJ01lc3NhZ2VzJ11cIj5NZXNzZW5nZXI8L2E+PC9saT5cclxuXHRcdFx0XHRcdDxsaT48YSBbcm91dGVyTGlua109XCJbJ0F1dGgnXVwiPkF1dGhlbnRpY2F0aW9uPC9hPjwvbGk+XHJcblx0XHRcdFx0PC91bD5cclxuXHRcdFx0PC9uYXY+XHJcblx0XHQ8L2hlYWRlcj5cclxuXHRgLFxyXG5cdGRpcmVjdGl2ZXM6IFtST1VURVJfRElSRUNUSVZFU10sXHJcblx0c3R5bGVzOiBbYFxyXG5cdFx0aGVhZGVyIHtcclxuXHRcdFx0bWFyZ2luLWJvdHRvbWU6IDIwcHg7XHJcblx0XHR9XHJcblx0XHR1bCB7XHJcblx0XHRcdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRcdH1cclxuXHRcdGxpIHtcclxuXHRcdFx0ZmxvYXQ6IG5vbmU7XHJcblx0XHRcdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuXHRcdH1cclxuXHRcdC5yb3V0ZXItbGluay1hY3RpdmUge1xyXG5cdFx0XHRiYWNrZ3JvdW5kLWNvbG9yOiAjMzM3YWI3O1xyXG5cdFx0XHRjb2xvcjogd2hpdGU7XHJcblxyXG5cdFx0fVxyXG5cdGBdXHJcbn0pXHJcbmV4cG9ydCBjbGFzcyBIZWFkZXJDb21wb25lbnQge1xyXG5cdFxyXG59IiwiZXhwb3J0IGNsYXNzIFVzZXIge1xyXG5cdGNvbnN0cnVjdG9yKHB1YmxpYyBlbWFpbDogc3RyaW5nLCBwYXNzd29yZDogc3RyaW5nLCBmaXJzdE5hbWU/OiBzdHJpbmcsIGxhc3ROYW1lPzogc3RyaW5nKSB7fVxyXG59Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1lc3NhZ2VzL21lc3NhZ2UudHMiLCJtZXNzYWdlcy9tZXNzYWdlLnNlcnZpY2UudHMiLCJtZXNzYWdlcy9tZXNzYWdlLWlucHV0LmNvbXBvbmVudC50cyIsIm1lc3NhZ2VzL21lc3NhZ2UuY29tcG9uZW50LnRzIiwibWVzc2FnZXMvbWVzc2FnZS1saXN0LmNvbXBvbmVudC50cyIsIm1lc3NhZ2VzL21lc3NhZ2VzLmNvbXBvbmVudC50cyIsImF1dGgvc2lnbnVwLmNvbXBvbmVudC50cyIsImF1dGgvc2lnbmluLmNvbXBvbmVudC50cyIsImF1dGgvbG9nb3V0LmNvbXBvbmVudC50cyIsImF1dGgvYXV0aGVudGljYXRpb24uY29tcG9uZW50LnRzIiwiaGVhZGVyLmNvbXBvbmVudC50cyIsImFwcC5jb21wb25lbnQudHMiLCJib290LnRzIiwiYXV0aC91c2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7WUFBQTtnQkFNSSxpQkFBYSxPQUFlLEVBQUUsU0FBa0IsRUFBRSxRQUFpQixFQUFFLE1BQWU7b0JBQ2hGLElBQUksQ0FBQyxPQUFPLEdBQUcsT0FBTyxDQUFDO29CQUN2QixJQUFJLENBQUMsU0FBUyxHQUFHLFNBQVMsQ0FBQztvQkFDM0IsSUFBSSxDQUFDLFFBQVEsR0FBRyxRQUFRLENBQUM7b0JBQ3pCLElBQUksQ0FBQyxNQUFNLEdBQUcsTUFBTSxDQUFDO2dCQUN6QixDQUFDO2dCQUNMLGNBQUM7WUFBRCxDQVpBLEFBWUMsSUFBQTtZQVpELDZCQVlDLENBQUE7Ozs7Ozs7Ozs7Ozs7OztZQ1hEO2dCQUFBO29CQUNJLGFBQVEsR0FBYyxFQUFFLENBQUM7Z0JBaUI3QixDQUFDO2dCQWZHLG1DQUFVLEdBQVYsVUFBVyxPQUFnQjtvQkFDdkIsSUFBSSxDQUFDLFFBQVEsQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLENBQUM7Z0JBQ2hDLENBQUM7Z0JBRUQsb0NBQVcsR0FBWDtvQkFDSSxNQUFNLENBQUMsSUFBSSxDQUFDLFFB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bEJEO2dCQUFBO2dCQUVBLENBQUM7Z0JBaEJEO29CQUFDLGlCQUFTLENBQUM7d0JBQ1AsUUFBUSxFQUFFLFFBQVE7d0JBQ2xCLFFBQVEsRUFBRSw4SUFLVDt3QkFDRCxVQUFVLEVBQUUsQ0FBQywwQkFBaUIsRUFBRSxrQ0FBZSxDQUFDO3FCQUNuRCxDQUFDO29CQUNELG9CQUFXLENBQUM7d0JBQ1QsRUFBQyxJQUFJLEVBQUUsR0FBRyxFQUFFLElBQUksRUFBRSxVQUFVLEVBQUUsU0FBUyxFQUFFLHNDQUFpQixFQUFFLFlBQVksRUFBRSxJQUFJLEVBQUM7d0JBQy9FLEVBQUMsSUFBSSxFQUFFLFdBQVcsRUFBRSxJQUFJLEVBQUUsTUFBTSxFQUFFLFNBQVMsRUFBRSxrREFBdUIsRUFBQztxQkFDeEUsQ0FBQzs7Z0NBQUE7Z0JBR0YsbUJBQUM7WUFBRCxDQUZBLEFBRUMsSUFBQTtZQUZELHdDQUVDLENBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O1lDZEQsbUJBQVMsQ0FBQyw0QkFBWSxFQUFFLENBQUMsZ0NBQWMsRUFBRSx5QkFBZ0IsRUFBRSxlQUFPLENBQUMseUJBQWdCLEVBQUUsRUFBQyxRQUFRLEVBQUUsNkJBQW9CLEVBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQzs7Ozs7Ozs7Ozs7WUNQekg7Z0JBQ0ksY0FBbUIsS0FBYSxFQUFTLFFBQWdCLEVBQVMsU0FBa0IsRUFBUyxRQUFpQjtvQkFBM0YsVUFBSyxHQUFMLEtBQUssQ0FBUTtvQkFBUyxhQUFRLEdBQVIsUUFBUSxDQUFRO29CQUFTLGNBQVMsR0FBVCxTQUFTLENBQVM7b0JBQVMsYUFBUSxHQUFSLFFBQVEsQ0FBUztnQkFBRyxDQUFDO2dCQUN0SCxXQUFDO1lBQUQsQ0FGQSxBQUVDLElBQUE7WUFGRCx3QkFFQyxDQUFBIiwiZmlsZSI6Ii4uLy4uLy4uL3VkZW15LW5vZGUtYW5ndWxhcjIvYXNzZXRzL2FwcC9idW5kbGUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgTWVzc2FnZSB7XG4gICAgY29udGVudDogc3RyaW5nO1xuICAgIHVzZXJuYW1lOiBzdHJpbmc7XG4gICAgbWVzc2FnZUlkOiBzdHJpbmc7XG4gICAgdXNlcklkOiBzdHJpbmc7XG5cbiAgICBjb25zdHJ1Y3RvciAoY29udGVudDogc3RyaW5nLCBtZXNzYWdlSWQ/OiBzdHJpbmcsIHVzZXJuYW1lPzogc3RyaW5nLCB1c2VySWQ/OiBzdHJpbmcpIHtcbiAgICAgICAgdGhpcy5jb250ZW50ID0gY29udGVudDtcbiAgICAgICAgdGhpcy5tZXNzYWdlSWQgPSBtZXNzYWdlSWQ7XG4gICAgICAgIHRoaXMudXNlcm5hbWUgPSB1c2VybmFtZTtcbiAgICAgICAgdGhpcy51c2VySWQgPSB1c2VySWQ7XG4gICAgfVxufSIsImltcG9ydCB7TWVzc2FnZX0gZnJvbSBcIi4vbWVzc2FnZVwiO1xuZXhwb3J0IGNsYXNzIE1lc3NhZ2VTZXJ2aWNlIHtcbiAgICBtZXNzYWdlczogTWVzc2FnZVtdID0gW107XG5cbiAgICBhZGRNZXNzYWdlKG1lc3NhZ2U6IE1lc3NhZ2UpIHtcbiAgICAgICAgdGhpcy5tZXNzYWdlcy5wdXNoKG1lc3NhZ2UpO1xuICAgIH1cblxuICAgIGdldE1lc3NhZ2VzKCkge1xuICAgICAgICByZXR1cm4gdGhpcy5tZXNzYWdlcztcbiAgICB9XG5cbiAgICBlZGl0TWVzc2FnZShtZXNzYWdlOiBNZXNzYWdlKSB7XG4gICAgICAgIHRoaXMubWVzc2FnZXNbdGhpcy5tZXNzYWdlcy5pbmRleE9mKG1lc3NhZ2UpXSA9IG5ldyBNZXNzYWdlKCdFZGl0ZWQnLCBudWxsLCAnRHVtbXknKTtcbiAgICB9XG5cbiAgICBkZWxldGVNZXNzYWdlKG1lc3NhZ2U6IE1lc3NhZ2UpIHtcbiAgICAgICAgdGhpcy5tZXNzYWdlcy5zcGxpY2UodGhpcy5tZXNzYWdlcy5pbmRleE9mKG1lc3NhZ2UpLCAxKTtcbiAgICB9XG59IiwiaW1wb3J0IHtDb21wb25lbnQsIE9uSW5pdH0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcbmltcG9ydCB7TWVzc2FnZX0gZnJvbSBcIi4vbWVzc2FnZVwiO1xuaW1wb3J0IHtNZXNzYWdlU2VydmljZX0gZnJvbSBcIi4vbWVzc2FnZS5zZXJ2aWNlXCI7XG5cbkBDb21wb25lbnQoe1xuICAgIHNlbGVjdG9yOiAnbXktbWVzc2FnZS1pbnB1dCcsXG4gICAgdGVtcGxhdGU6IGBcbiAgICAgICAgPHNlY3Rpb24gY2xhc3M9XCJjb2wtbWQtOCBjb2wtbWQtb2Zmc2V0LTJcIj5cbiAgICAgICAgICAgIDxmb3JtIChuZ1N1Ym1pdCk9XCJvblN1Ym1pdChmLnZhbHVlKVwiICNmPVwibmdGb3JtXCI+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cImZvcm0tZ3JvdXBcIj5cbiAgICAgICAgICAgICAgICAgICAgPGxhYmVsIGZvcj1cImNvbnRlbnRcIj5Db250ZW50PC9sYWJlbD5cbiAgICAgICAgICAgICAgICAgICAgPGlucHV0IG5nQ29udHJvbD1cImNvbnRlbnRcIiB0eXBlPVwidGV4dFwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCIgaWQ9XCJjb250ZW50XCIgI2lucHV0PlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cInN1Ym1pdFwiIGNsYXNzPVwiYnRuIGJ0bi1wcmltYXJ5XCI+U2VuZCBNZXNzYWdlPC9idXR0b24+XG4gICAgICAgICAgICA8L2Zvcm0+XG4gICAgICAgIDwvc2VjdGlvbj5cbiAgICBgXG59KVxuZXhwb3J0IGNsYXNzIE1lc3NhZ2VJbnB1dENvbXBvbmVudCB7XG4gICAgbWVzc2FnZTpNZXNzYWdlID0gbnVsbDtcblxuICAgIGNvbnN0cnVjdG9yKHByaXZhdGUgX21lc3NhZ2VTZXJ2aWNlOk1lc3NhZ2VTZXJ2aWNlKSB7XG4gICAgfVxuXG4gICAgb25TdWJtaXQoZm9ybTphbnkpIHtcbiAgICAgICAgY29uc3QgbWVzc2FnZTpNZXNzYWdlID0gbmV3IE1lc3NhZ2UoZm9ybS5jb250ZW50LCBudWxsLCAnRHVtbXknKTtcbiAgICAgICAgdGhpcy5fbWVzc2FnZVNlcnZpY2UuYWRkTWVzc2FnZShtZXNzYWdlKTtcbiAgICB9XG59IiwiaW1wb3J0IHtDb21wb25lbnQsIElucHV0LCBPdXRwdXQsIEV2ZW50RW1pdHRlcn0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcbmltcG9ydCB7TWVzc2FnZX0gZnJvbSBcIi4vbWVzc2FnZVwiO1xuaW1wb3J0IHtNZXNzYWdlU2VydmljZX0gZnJvbSBcIi4vbWVzc2FnZS5zZXJ2aWNlXCI7XG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ215LW1lc3NhZ2UnLFxuICAgIHRlbXBsYXRlOiBgXG4gICAgICAgIDxhcnRpY2xlIGNsYXNzPVwicGFuZWwgcGFuZWwtZGVmYXVsdFwiPlxuICAgICAgICAgICAgPGRpdiBjbGFzcz1cInBhbmVsLWJvZHlcIj5cbiAgICAgICAgICAgICAgICB7eyBtZXNzYWdlLmNvbnRlbnQgfX1cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPGZvb3RlciBjbGFzcz1cInBhbmVsLWZvb3RlclwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJhdXRob3JcIj5cbiAgICAgICAgICAgICAgICAgICAge3sgbWVzc2FnZS51c2VybmFtZSB9fVxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJjb25maWdcIj5cbiAgICAgICAgICAgICAgICAgICAgPGEgKGNsaWNrKT1cIm9uRWRpdCgpXCI+RWRpdDwvYT5cbiAgICAgICAgICAgICAgICAgICAgPGEgKGNsaWNrKT1cIm9uRGVsZXRlKClcIj5EZWxldGU8L2E+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Zvb3Rlcj5cbiAgICAgICAgPC9hcnRpY2xlPlxuICAgIGAsXG4gICAgc3R5bGVzOiBbYFxuICAgICAgICAuYXV0aG9yIHtcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IGl0YWxpYztcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICAgICAgICAgIHdpZHRoOiA4MCU7XG4gICAgICAgIH1cbiAgICAgICAgLmNvbmZpZyB7XG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOiByaWdodDtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICAgICAgICAgIHdpZHRoOiAxOSU7XG4gICAgICAgIH1cbiAgICBgXVxufSlcbmV4cG9ydCBjbGFzcyBNZXNzYWdlQ29tcG9uZW50IHtcbiAgICBASW5wdXQoKSBtZXNzYWdlOk1lc3NhZ2U7XG4gICAgQE91dHB1dCgpIGVkaXRDbGlja2VkID0gbmV3IEV2ZW50RW1pdHRlcjxzdHJpbmc+KCk7XG5cbiAgICBjb25zdHJ1Y3RvciAocHJpdmF0ZSBfbWVzc2FnZVNlcnZpY2U6IE1lc3NhZ2VTZXJ2aWNlKSB7fVxuXG4gICAgb25FZGl0KCkge1xuICAgICAgICB0aGlzLl9tZXNzYWdlU2VydmljZS5lZGl0TWVzc2FnZSh0aGlzLm1lc3NhZ2UpO1xuICAgIH1cblxuICAgIG9uRGVsZXRlKCkge1xuICAgICAgICB0aGlzLl9tZXNzYWdlU2VydmljZS5kZWxldGVNZXNzYWdlKHRoaXMubWVzc2FnZSk7XG4gICAgfVxufSIsImltcG9ydCB7Q29tcG9uZW50LCBPbkluaXR9IGZyb20gXCJhbmd1bGFyMi9jb3JlXCI7XG5pbXBvcnQge01lc3NhZ2VDb21wb25lbnR9IGZyb20gXCIuL21lc3NhZ2UuY29tcG9uZW50XCI7XG5pbXBvcnQge01lc3NhZ2V9IGZyb20gXCIuL21lc3NhZ2VcIjtcbmltcG9ydCB7TWVzc2FnZVNlcnZpY2V9IGZyb20gXCIuL21lc3NhZ2Uuc2VydmljZVwiO1xuQENvbXBvbmVudCh7XG4gICAgc2VsZWN0b3I6ICdteS1tZXNzYWdlLWxpc3QnLFxuICAgIHRlbXBsYXRlOiBgXG4gICAgICAgIDxzZWN0aW9uIGNsYXNzPVwiY29sLW1kLTggY29sLW1kLW9mZnNldC0yXCI+XG4gICAgICAgICAgICA8bXktbWVzc2FnZSAqbmdGb3I9XCIjbWVzc2FnZSBvZiBtZXNzYWdlc1wiIFttZXNzYWdlXT1cIm1lc3NhZ2VcIiAoZWRpdENsaWNrZWQpPVwibWVzc2FnZS5jb250ZW50ID0gJGV2ZW50XCI+PC9teS1tZXNzYWdlPiAgICAgXG4gICAgICAgIDwvc2VjdGlvbj5cbiAgICBgLFxuICAgIGRpcmVjdGl2ZXM6IFtNZXNzYWdlQ29tcG9uZW50XVxufSlcbmV4cG9ydCBjbGFzcyBNZXNzYWdlTGlzdENvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG5cbiAgICBjb25zdHJ1Y3Rvcihwcml2YXRlIF9tZXNzYWdlU2VydmljZTogTWVzc2FnZVNlcnZpY2UpIHt9XG5cbiAgICBtZXNzYWdlczogTWVzc2FnZVtdO1xuXG4gICAgbmdPbkluaXQoKSB7XG4gICAgICAgIHRoaXMubWVzc2FnZXMgPSB0aGlzLl9tZXNzYWdlU2VydmljZS5nZXRNZXNzYWdlcygpO1xuICAgIH1cbn0iLCJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcbmltcG9ydCB7TWVzc2FnZUlucHV0Q29tcG9uZW50fSBmcm9tIFwiLi9tZXNzYWdlLWlucHV0LmNvbXBvbmVudFwiO1xuaW1wb3J0IHtNZXNzYWdlTGlzdENvbXBvbmVudH0gZnJvbSBcIi4vbWVzc2FnZS1saXN0LmNvbXBvbmVudFwiO1xuQENvbXBvbmVudCh7XG4gICAgc2VsZWN0b3I6ICdteS1tZXNzYWdlcycsXG4gICAgdGVtcGxhdGU6IGBcbiAgICAgICAgPGRpdiBjbGFzcz1cInJvdyBzcGFjaW5nXCI+XG4gICAgICAgICAgICA8bXktbWVzc2FnZS1pbnB1dD48L215LW1lc3NhZ2UtaW5wdXQ+XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzPVwicm93IHNwYWNpbmdcIj5cbiAgICAgICAgICAgIDxteS1tZXNzYWdlLWxpc3Q+PC9teS1tZXNzYWdlLWxpc3Q+XG4gICAgICAgIDwvZGl2PiBcbiAgICBgLFxuICAgIGRpcmVjdGl2ZXM6IFtNZXNzYWdlTGlzdENvbXBvbmVudCwgTWVzc2FnZUlucHV0Q29tcG9uZW50XVxufSlcbmV4cG9ydCBjbGFzcyBNZXNzYWdlc0NvbXBvbmVudCB7XG4gICAgXG59IiwiaW1wb3J0IHtDb21wb25lbnQsIE9uSW5pdH0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcbmltcG9ydCB7Rm9ybUJ1aWxkZXIsIENvbnRyb2xHcm91cCwgVmFsaWRhdG9ycywgQ29udHJvbH0gZnJvbSBcImFuZ3VsYXIyL2NvbW1vblwiO1xuXG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ215LXNpZ251cCcsXG4gICAgdGVtcGxhdGU6IGBcbiAgICAgICAgPHNlY3Rpb24gY2xhc3M9XCJjb2wtbWQtOCBjb2wtbWQtb2Zmc2V0LTJcIj5cbiAgICAgICAgICAgIDxmb3JtIFtuZ0Zvcm1Nb2RlbF09XCJteUZvcm1cIiAobmdTdWJtaXQpPVwib25TdWJtaXQoKVwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsYWJlbCBmb3I9XCJmaXJzdE5hbWVcIj5GaXJzdCBOYW1lPC9sYWJlbD5cbiAgICAgICAgICAgICAgICAgICAgPGlucHV0IFtuZ0Zvcm1Db250cm9sXT1cIm15Rm9ybS5maW5kKCdmaXJzdE5hbWUnKVwiIHR5cGU9XCJ0ZXh0XCIgaWQ9XCJmaXJzdE5hbWVcIiBjbGFzcz1cImZvcm0tY29udHJvbFwiPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsYWJlbCBmb3I9XCJsYXN0TmFtZVwiPkxhc3QgTmFtZTwvbGFiZWw+XG4gICAgICAgICAgICAgICAgICAgIDxpbnB1dCBbbmdGb3JtQ29udHJvbF09XCJteUZvcm0uZmluZCgnbGFzdE5hbWUnKVwiIHR5cGU9XCJ0ZXh0XCIgaWQ9XCJsYXN0TmFtZVwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCI+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzcz1cImZvcm0tZ3JvdXBcIj5cbiAgICAgICAgICAgICAgICAgICAgPGxhYmVsIGZvcj1cImVtYWlsXCI+TWFpbDwvbGFiZWw+XG4gICAgICAgICAgICAgICAgICAgIDxpbnB1dCBbbmdGb3JtQ29udHJvbF09XCJteUZvcm0uZmluZCgnZW1haWwnKVwiIHR5cGU9XCJlbWFpbFwiIGlkPVwiZW1haWxcIiBjbGFzcz1cImZvcm0tY29udHJvbFwiPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsYWJlbCBmb3I9XCJwYXNzd29yZFwiPlBhc3N3b3JkPC9sYWJlbD5cbiAgICAgICAgICAgICAgICAgICAgPGlucHV0IFtuZ0Zvcm1Db250cm9sXT1cIm15Rm9ybS5maW5kKCdwYXNzd29yZCcpXCIgdHlwZT1cInBhc3N3b3JkXCIgaWQ9XCJwYXNzd29yZFwiIGNsYXNzPVwiZm9ybS1jb250cm9sXCI+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGJ1dHRvbiB0eXBlPVwic3VibWl0XCIgY2xhc3M9XCJidG4gYnRuLXByaW1hcnlcIiBbZGlzYWJsZWRdPVwiIW15Rm9ybS52YWxpZFwiPlNpZ24gVXA8L2J1dHRvbj5cbiAgICAgICAgICAgIDwvZm9ybT5cbiAgICAgICAgPC9zZWN0aW9uPlxuICAgIGBcbn0pXG5leHBvcnQgY2xhc3MgU2lnbnVwQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcbiAgICBteUZvcm06IENvbnRyb2xHcm91cDtcblxuICAgIGNvbnN0cnVjdG9yKHByaXZhdGUgX2ZiOkZvcm1CdWlsZGVyKSB7fVxuXG4gICAgb25TdWJtaXQoKSB7XG4gICAgICAgIGNvbnNvbGUubG9nKHRoaXMubXlGb3JtLnZhbHVlKTtcbiAgICB9XG5cbiAgICBuZ09uSW5pdCgpIHtcbiAgICAgICAgdGhpcy5teUZvcm0gPSB0aGlzLl9mYi5ncm91cCh7XG4gICAgICAgICAgICBmaXJzdE5hbWU6IFsnJywgVmFsaWRhdG9ycy5yZXF1aXJlZF0sXG4gICAgICAgICAgICBsYXN0TmFtZTogWycnLCBWYWxpZGF0b3JzLnJlcXVpcmVkXSxcbiAgICAgICAgICAgIGVtYWlsOiBbJycsIFZhbGlkYXRvcnMuY29tcG9zZShbXG4gICAgICAgICAgICAgICAgVmFsaWRhdG9ycy5yZXF1aXJlZCxcbiAgICAgICAgICAgICAgICB0aGlzLmlzRW1haWxcbiAgICAgICAgICAgIF0pXSxcbiAgICAgICAgICAgIHBhc3N3b3JkOiBbJycsIFZhbGlkYXRvcnMucmVxdWlyZWRdXG4gICAgICAgIH0pO1xuICAgIH1cblxuICAgIHByaXZhdGUgaXNFbWFpbChjb250cm9sOiBDb250cm9sKToge1tzOiBzdHJpbmddOiBib29sZWFufSB7XG4gICAgICAgIGlmICghY29udHJvbC52YWx1ZS5tYXRjaChcIlthLXowLTkhIyQlJicqKy89P15fYHt8fX4tXSsoPzpcXC5bYS16MC05ISMkJSYnKisvPT9eX2B7fH1+LV0rKSpAKD86W2EtejAtOV0oPzpbYS16MC05LV0qW2EtejAtOV0pP1xcLikrW2EtejAtOV0oPzpbYS16MC05LV0qW2EtejAtOV0pP1wiKSkge1xuICAgICAgICAgICAgcmV0dXJuIHtpbnZhbGlkTWFpbDogdHJ1ZX07XG4gICAgICAgIH1cbiAgICB9XG59IiwiaW1wb3J0IHtDb21wb25lbnQsIE9uSW5pdH0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcbmltcG9ydCB7Q29udHJvbEdyb3VwLCBGb3JtQnVpbGRlciwgVmFsaWRhdG9ycywgQ29udHJvbH0gZnJvbSBcImFuZ3VsYXIyL2NvbW1vblwiO1xuXG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ215LXNpZ25pbicsXG4gICAgdGVtcGxhdGU6IGBcbiAgICAgICAgPHNlY3Rpb24gY2xhc3M9XCJjb2wtbWQtOCBjb2wtbWQtb2Zmc2V0LTJcIj5cbiAgICAgICAgICAgIDxmb3JtIFtuZ0Zvcm1Nb2RlbF09XCJteUZvcm1cIiAobmdTdWJtaXQpPVwib25TdWJtaXQoKVwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJmb3JtLWdyb3VwXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsYWJlbCBmb3I9XCJlbWFpbFwiPk1haWw8L2xhYmVsPlxuICAgICAgICAgICAgICAgICAgICA8aW5wdXQgW25nRm9ybUNvbnRyb2xdPVwibXlGb3JtLmZpbmQoJ2VtYWlsJylcIiB0eXBlPVwiZW1haWxcIiBpZD1cImVtYWlsXCIgY2xhc3M9XCJmb3JtLWNvbnRyb2xcIj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPVwiZm9ybS1ncm91cFwiPlxuICAgICAgICAgICAgICAgICAgICA8bGFiZWwgZm9yPVwicGFzc3dvcmRcIj5QYXNzd29yZDwvbGFiZWw+XG4gICAgICAgICAgICAgICAgICAgIDxpbnB1dCBbbmdGb3JtQ29udHJvbF09XCJteUZvcm0uZmluZCgncGFzc3dvcmQnKVwiIHR5cGU9XCJwYXNzd29yZFwiIGlkPVwicGFzc3dvcmRcIiBjbGFzcz1cImZvcm0tY29udHJvbFwiPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cInN1Ym1pdFwiIGNsYXNzPVwiYnRuIGJ0bi1wcmltYXJ5XCIgW2Rpc2FibGVkXT1cIiFteUZvcm0udmFsaWRcIj5TaWduIFVwPC9idXR0b24+XG4gICAgICAgICAgICA8L2Zvcm0+XG4gICAgICAgIDwvc2VjdGlvbj5cbiAgICBgXG59KVxuZXhwb3J0IGNsYXNzIFNpZ25pbkNvbXBvbmVudCBpbXBsZW1lbnRzIE9uSW5pdCB7XG4gICAgbXlGb3JtOiBDb250cm9sR3JvdXA7XG5cbiAgICBjb25zdHJ1Y3Rvcihwcml2YXRlIF9mYjpGb3JtQnVpbGRlcikge31cblxuICAgIG9uU3VibWl0KCkge1xuICAgICAgICBjb25zb2xlLmxvZyh0aGlzLm15Rm9ybS52YWx1ZSk7XG4gICAgfVxuXG4gICAgbmdPbkluaXQoKSB7XG4gICAgICAgIHRoaXMubXlGb3JtID0gdGhpcy5fZmIuZ3JvdXAoe1xuICAgICAgICAgICAgZW1haWw6IFsnJywgVmFsaWRhdG9ycy5jb21wb3NlKFtcbiAgICAgICAgICAgICAgICBWYWxpZGF0b3JzLnJlcXVpcmVkLFxuICAgICAgICAgICAgICAgIHRoaXMuaXNFbWFpbFxuICAgICAgICAgICAgXSldLFxuICAgICAgICAgICAgcGFzc3dvcmQ6IFsnJywgVmFsaWRhdG9ycy5yZXF1aXJlZF1cbiAgICAgICAgfSk7XG4gICAgfVxuXG4gICAgcHJpdmF0ZSBpc0VtYWlsKGNvbnRyb2w6IENvbnRyb2wpOiB7W3M6IHN0cmluZ106IGJvb2xlYW59IHtcbiAgICAgICAgaWYgKCFjb250cm9sLnZhbHVlLm1hdGNoKFwiW2EtejAtOSEjJCUmJyorLz0/Xl9ge3x9fi1dKyg/OlxcLlthLXowLTkhIyQlJicqKy89P15fYHt8fX4tXSspKkAoPzpbYS16MC05XSg/OlthLXowLTktXSpbYS16MC05XSk/XFwuKStbYS16MC05XSg/OlthLXowLTktXSpbYS16MC05XSk/XCIpKSB7XG4gICAgICAgICAgICByZXR1cm4ge2ludmFsaWRNYWlsOiB0cnVlfTtcbiAgICAgICAgfVxuICAgIH1cbn0iLCJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSBcImFuZ3VsYXIyL2NvcmVcIjtcbkBDb21wb25lbnQoe1xuICAgIHNlbGVjdG9yOiAnbXktbG9nb3V0JyxcbiAgICB0ZW1wbGF0ZTogYFxuICAgICAgICA8c2VjdGlvbiBjbGFzcz1cImNvbC1tZC04IGNvbC1tZC1vZmZzZXQtMlwiPlxuICAgICAgICAgICAgPGJ1dHRvbiBjbGFzcz1cImJ0biBidG4tZGFuZ2VyXCIgKGNsaWNrKT1cIm9uTG9nb3V0KClcIj5Mb2dvdXQ8L2J1dHRvbj5cbiAgICAgICAgPC9zZWN0aW9uPlxuICAgIGBcbn0pXG5leHBvcnQgY2xhc3MgTG9nb3V0Q29tcG9uZW50IHtcblxuICAgIG9uTG9nb3V0KCkge1xuXG4gICAgfVxufSIsImltcG9ydCB7Q29tcG9uZW50fSBmcm9tIFwiYW5ndWxhcjIvY29yZVwiO1xuaW1wb3J0IHtTaWdudXBDb21wb25lbnR9IGZyb20gXCIuL3NpZ251cC5jb21wb25lbnRcIjtcbmltcG9ydCB7Um91dGVDb25maWcsIFJPVVRFUl9ESVJFQ1RJVkVTfSBmcm9tIFwiYW5ndWxhcjIvcm91dGVyXCI7XG5pbXBvcnQge1NpZ25pbkNvbXBvbmVudH0gZnJvbSBcIi4vc2lnbmluLmNvbXBvbmVudFwiO1xuaW1wb3J0IHtMb2dvdXRDb21wb25lbnR9IGZyb20gXCIuL2xvZ291dC5jb21wb25lbnRcIjtcbkBDb21wb25lbnQoe1xuICAgIHNlbGVjdG9yOiAnbXktYXV0aCcsXG4gICAgdGVtcGxhdGU6IGBcbiAgICAgICAgPGhlYWRlciBjbGFzcz1cInJvdyBzcGFjaW5nXCI+XG4gICAgICAgICAgICA8bmF2IGNsYXNzPVwiY29sLW1kLTggY29sLW1kLW9mZnNldC0yXCI+XG4gICAgICAgICAgICAgICAgPHVsIGNsYXNzPVwibmF2IG5hdi10YWJzXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsaT48YSBbcm91dGVyTGlua109XCJbJ1NpZ251cCddXCI+U2lnbnVwPC9hPjwvbGk+XG4gICAgICAgICAgICAgICAgICAgIDxsaT48YSBbcm91dGVyTGlua109XCJbJ1NpZ25pbiddXCI+U2lnbmluPC9hPjwvbGk+XG4gICAgICAgICAgICAgICAgICAgIDxsaT48YSBbcm91dGVyTGlua109XCJbJ0xvZ291dCddXCI+TG9nb3V0PC9hPjwvbGk+XG4gICAgICAgICAgICAgICAgPC91bD5cbiAgICAgICAgICAgIDwvbmF2PlxuICAgICAgICA8L2hlYWRlcj5cbiAgICAgICAgPGRpdiBjbGFzcz1cInJvdyBzcGFjaW5nXCI+XG4gICAgICAgICAgICA8cm91dGVyLW91dGxldD48L3JvdXRlci1vdXRsZXQ+XG4gICAgICAgIDwvZGl2PlxuICAgIGAsXG4gICAgZGlyZWN0aXZlczogW1JPVVRFUl9ESVJFQ1RJVkVTXSxcbiAgICBzdHlsZXM6IFtgXG4gICAgICAgIC5yb3V0ZXItbGluay1hY3RpdmUge1xuICAgICAgICAgICAgY29sb3I6ICM1NTU7XG4gICAgICAgICAgICBjdXJzb3I6IGRlZmF1bHQ7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xuICAgICAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI2RkZDtcbiAgICAgICAgICAgIGJvcmRlci1ib3R0b20tY29sb3I6IHRyYW5zcGFyZW50O1xuICAgICAgICB9XG4gICAgYF1cbn0pXG5AUm91dGVDb25maWcoW1xuICAgIHtwYXRoOiAnL3NpZ251cCcsIG5hbWU6ICdTaWdudXAnLCBjb21wb25lbnQ6IFNpZ251cENvbXBvbmVudCwgdXNlQXNEZWZhdWx0OiB0cnVlfSxcbiAgICB7cGF0aDogJy9zaWduaW4nLCBuYW1lOiAnU2lnbmluJywgY29tcG9uZW50OiBTaWduaW5Db21wb25lbnR9LFxuICAgIHtwYXRoOiAnL2xvZ291dCcsIG5hbWU6ICdMb2dvdXQnLCBjb21wb25lbnQ6IExvZ291dENvbXBvbmVudH0sXG5dKVxuZXhwb3J0IGNsYXNzIEF1dGhlbnRpY2F0aW9uQ29tcG9uZW50IHtcblxufSIsImltcG9ydCB7Q29tcG9uZW50fSBmcm9tIFwiYW5ndWxhcjIvY29yZVwiO1xuaW1wb3J0IHtST1VURVJfRElSRUNUSVZFU30gZnJvbSBcImFuZ3VsYXIyL3JvdXRlclwiO1xuQENvbXBvbmVudCh7XG4gICAgc2VsZWN0b3I6ICdteS1oZWFkZXInLFxuICAgIHRlbXBsYXRlOiBgXG4gICAgICAgIDxoZWFkZXIgY2xhc3M9XCJyb3dcIj5cbiAgICAgICAgICAgIDxuYXYgY2xhc3M9XCJjb2wtbWQtOCBjb2wtbWQtb2Zmc2V0LTJcIj5cbiAgICAgICAgICAgICAgICA8dWwgY2xhc3M9XCJuYXYgbmF2LXBpbGxzXCI+XG4gICAgICAgICAgICAgICAgICAgIDxsaT48YSBbcm91dGVyTGlua109XCJbJ01lc3NhZ2VzJ11cIj5NZXNzYWdlczwvYT48L2xpPlxuICAgICAgICAgICAgICAgICAgICA8bGk+PGEgW3JvdXRlckxpbmtdPVwiWydBdXRoJ11cIj5BdXRoZW50aWNhdGlvbjwvYT48L2xpPlxuICAgICAgICAgICAgICAgIDwvdWw+XG4gICAgICAgICAgICA8L25hdj5cbiAgICAgICAgPC9oZWFkZXI+XG4gICAgYCxcbiAgICBkaXJlY3RpdmVzOiBbUk9VVEVSX0RJUkVDVElWRVNdLFxuICAgIHN0eWxlczogW2BcbiAgICAgICAgaGVhZGVyIHtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gICAgICAgIH1cbiAgICBcbiAgICAgICAgdWwge1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjsgIFxuICAgICAgICB9XG4gICAgICAgIFxuICAgICAgICBsaSB7XG4gICAgICAgICAgICBmbG9hdDogbm9uZTtcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgICAgfVxuICAgICAgICBcbiAgICAgICAgLnJvdXRlci1saW5rLWFjdGl2ZSB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzM3YWI3O1xuICAgICAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICB9XG4gICAgYF1cbn0pXG5leHBvcnQgY2xhc3MgSGVhZGVyQ29tcG9uZW50IHtcbiAgICBcbn0iLCJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XG5pbXBvcnQge1JvdXRlQ29uZmlnLCBST1VURVJfRElSRUNUSVZFU30gZnJvbSBcImFuZ3VsYXIyL3JvdXRlclwiO1xuaW1wb3J0IHtNZXNzYWdlc0NvbXBvbmVudH0gZnJvbSBcIi4vbWVzc2FnZXMvbWVzc2FnZXMuY29tcG9uZW50XCI7XG5pbXBvcnQge0F1dGhlbnRpY2F0aW9uQ29tcG9uZW50fSBmcm9tIFwiLi9hdXRoL2F1dGhlbnRpY2F0aW9uLmNvbXBvbmVudFwiO1xuaW1wb3J0IHtIZWFkZXJDb21wb25lbnR9IGZyb20gXCIuL2hlYWRlci5jb21wb25lbnRcIjtcbkBDb21wb25lbnQoe1xuICAgIHNlbGVjdG9yOiAnbXktYXBwJyxcbiAgICB0ZW1wbGF0ZTogYCBcbiAgICAgICAgPGRpdiBjbGFzcz1cImNvbnRhaW5lclwiPlxuICAgICAgICAgICAgPG15LWhlYWRlcj48L215LWhlYWRlcj5cbiAgICAgICAgICAgIDxyb3V0ZXItb3V0bGV0Pjwvcm91dGVyLW91dGxldD5cbiAgICAgICAgPC9kaXY+XG4gICAgYCxcbiAgICBkaXJlY3RpdmVzOiBbUk9VVEVSX0RJUkVDVElWRVMsIEhlYWRlckNvbXBvbmVudF1cbn0pXG5AUm91dGVDb25maWcoW1xuICAgIHtwYXRoOiAnLycsIG5hbWU6ICdNZXNzYWdlcycsIGNvbXBvbmVudDogTWVzc2FnZXNDb21wb25lbnQsIHVzZUFzRGVmYXVsdDogdHJ1ZX0sXG4gICAge3BhdGg6ICcvYXV0aC8uLi4nLCBuYW1lOiAnQXV0aCcsIGNvbXBvbmVudDogQXV0aGVudGljYXRpb25Db21wb25lbnR9XG5dKVxuZXhwb3J0IGNsYXNzIEFwcENvbXBvbmVudCB7XG4gICAgXG59IiwiLy8vPHJlZmVyZW5jZSBwYXRoPVwiLi4vLi4vbm9kZV9tb2R1bGVzL2FuZ3VsYXIyL3R5cGluZ3MvYnJvd3Nlci5kLnRzXCIvPlxuaW1wb3J0IHtib290c3RyYXB9IGZyb20gJ2FuZ3VsYXIyL3BsYXRmb3JtL2Jyb3dzZXInO1xuaW1wb3J0IHtBcHBDb21wb25lbnR9IGZyb20gXCIuL2FwcC5jb21wb25lbnRcIjtcbmltcG9ydCB7TWVzc2FnZVNlcnZpY2V9IGZyb20gXCIuL21lc3NhZ2VzL21lc3NhZ2Uuc2VydmljZVwiO1xuaW1wb3J0IHtST1VURVJfUFJPVklERVJTLCBMb2NhdGlvblN0cmF0ZWd5LCBIYXNoTG9jYXRpb25TdHJhdGVneX0gZnJvbSBcImFuZ3VsYXIyL3JvdXRlclwiO1xuaW1wb3J0IHtwcm92aWRlfSBmcm9tIFwiYW5ndWxhcjIvY29yZVwiO1xuXG5ib290c3RyYXAoQXBwQ29tcG9uZW50LCBbTWVzc2FnZVNlcnZpY2UsIFJPVVRFUl9QUk9WSURFUlMsIHByb3ZpZGUoTG9jYXRpb25TdHJhdGVneSwge3VzZUNsYXNzOiBIYXNoTG9jYXRpb25TdHJhdGVneX0pXSk7IiwiZXhwb3J0IGNsYXNzIFVzZXIge1xuICAgIGNvbnN0cnVjdG9yKHB1YmxpYyBlbWFpbDogc3RyaW5nLCBwdWJsaWMgcGFzc3dvcmQ6IHN0cmluZywgcHVibGljIGZpcnN0TmFtZT86IHN0cmluZywgcHVibGljIGxhc3ROYW1lPzogc3RyaW5nKSB7fVxufSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

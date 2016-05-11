@@ -2,7 +2,8 @@
 import {bootstrap} from 'angular2/platform/browser';
 import {AppComponent} from "./app.component";
 import {MessageService} from "./messages/message.service";
-import {ROUTE_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
-import {provide} from 'angular2/core';
+import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from "angular2/router";
+import {provide} from "angular2/core";
+import {HTTP_PROVIDERS} from "angular2/http";
 
-bootstrap(AppComponent, [MessageService, ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy})]);
+bootstrap(AppComponent, [MessageService, AuthService, ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy}), HTTP_PROVIDERS]);

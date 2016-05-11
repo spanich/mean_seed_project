@@ -16,6 +16,7 @@
     "hbs": "~3.1.0",
     "mongoose": "^4.4.12",
     "morgan": "~1.6.1",
+    "password-hash": "^1.2.2",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "serve-favicon": "~2.3.0",
